@@ -12,6 +12,7 @@ import { PublicCommentsComponent } from './public-comments/public-comments.compo
 import { PrivateNotesComponent } from './private-notes/private-notes.component';
 import { LoginComponent } from './login/login.component';
 import { UploadComponent } from './upload/upload.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UploadComponent } from './upload/upload.component';
     PublicCommentsComponent,
     PrivateNotesComponent,
     LoginComponent,
-    UploadComponent
+    UploadComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
