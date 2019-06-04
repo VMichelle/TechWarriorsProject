@@ -10,7 +10,7 @@ export const environment = {
     databaseURL: 'https://midland-techwarriors.firebaseio.com',
     projectId: 'midland-techwarriors',
     storageBucket: 'midland-techwarriors.appspot.com',
-    messagingSenderId: 'sender-id'
+    messagingSenderId: '863967697339'
   }
 };
 
