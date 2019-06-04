@@ -1,4 +1,47 @@
 <app-header></app-header>
-<p>
-  registration works!
-</p>
+
+<h1>Registration</h1>
+
+<form #register="ngForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="firstName">First Name</label>
+    <br>
+    <input required minlength="2" maxlength="15" type="text" #firstName="ngModel" class="form-control" id="firstName" placeholder="First Name" [(ngModel)]="register.firstName" name="firstName">
+    Remove this: {{register.firstName}}
+    <div *ngIf="firstName.errors && (firstName.dirty || firstName.touched)">
+      First Name must be between 2 and 15 characters.
+    </div>
+  </div>
+
+  <div>
+    <label for="lastName">Last Name</label>
+    <br>
+    <input required minlength="2" maxlength="15" type="text" #lastName="ngModel" class="form-control" id="lastName" placeholder="Last Name" [(ngModel)]="register.lastName" name="lastName">
+    Remove this: {{register.lastName}}
+    <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched)">
+      Last Name must be between 2 and 15 characters
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <br>
+    <input required email type="email" #email="ngModel" class="form-control" id="email" placeholder="Email" [(ngModel)]="register.email" name="email">
+    Remove this: {{register.email}}
+    <div *ngIf="email.error && (email.dirty || email.touched)">
+      Email is invalid
+    </div>
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <br>
+    <input required password type="password" #password="ngModel" classe="form-control" id="password" placeholder="Password" [(ngModel)]="register.password" name="password">
+    Remove this: {{register.password}}
+    <div *ngIf="password.error && (password.dirty || password.touched)">
+      Please enter a valid password.
+    </div>
+  </div>
+
+  <button *ngIf="password.valid && email.valid && lastName.valid && firstName.valid" type="submit">Submit</button>
+</form>
