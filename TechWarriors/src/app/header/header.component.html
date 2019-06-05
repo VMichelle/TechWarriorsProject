@@ -1,5 +1,17 @@
-<a [routerLink]="[ '/home' ]" routerLinkActive="active">Home</a>
-<a [routerLink]="[ '/about' ]" routerLinkActive="active">About</a>
-<a [routerLink]="[ '/login' ]" routerLinkActive="active">Login</a>
-<a [routerLink]="[ '/registration' ]" routerLinkActive="active">Register</a>
-<a [routerLink]="[ '/content' ]" routerLinkActive="active">Content</a>
+
+
+<div class="header">
+        <div class="content">
+            <img class="headerLogo" src="https://code.midlandu.edu/wp-content/uploads/2017/06/White.png" alt="">
+            
+            <a class="navLink ml-4" [routerLink]="[ '/home' ]" routerLinkActive="active">Home</a>
+        
+            <a class="navLink" [routerLink]="[ '/about' ]" routerLinkActive="active">About</a>
+            
+            <a class="navLink" [routerLink]="[ '/login' ]" routerLinkActive="active">Login</a>
+            
+            <a class="navLink" [routerLink]="[ '/registration' ]" routerLinkActive="active">Register</a>
+
+                <a class="navLink" [routerLink]="[ '/content' ]" routerLinkActive="active">Content</a>
+        </div>
+</div>
