@@ -1,14 +1,23 @@
 .hero{
     height: 400px;
     overflow: hidden;
-    background-color: black;
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/midland-techwarriors.appspot.com/o/MUCodeAcademy-3473.jpg?alt=media&token=f59e839b-5720-4556-8693-319ef7fc9aa1');
+    background-color: #0e2340;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://firebasestorage.googleapis.com/v0/b/midland-techwarriors.appspot.com/o/MUCodeAcademy-6765.jpg?alt=media&token=84847cdf-5c98-4bd9-85a6-38521205c8bd');
     background-size: cover;
     background-position: center;
 }
 
-.heroButton{
+.orange{
+    color: #ee7623;
+}
 
+.darkblue{
+    color: #0e2340;
+}
+
+.heroTitle{
+    max-width: 600px;
+    font-size: 3em;
 }
 
 .buttonArea{
@@ -17,6 +26,24 @@
 
 .aboutSection{
     background-color: #0e2340;
-    height: 300px;
+    height: auto;
     color: white;
+    min-height: 500px;
+}
+
+.shareIcon{
+    height: 150px;
+}
+
+.aboutContent{
+    max-width: 700px;
+}
+
+#productShot{
+    max-width: 500px;
+}
+
+.productPreview{
+    background-color: white;
+    min-height: 600px;
 }
