@@ -13,6 +13,7 @@ import { PrivateNotesComponent } from './private-notes/private-notes.component';
 import { LoginComponent } from './login/login.component';
 import { UploadComponent } from './upload/upload.component';
 import { FooterComponent } from './footer/footer.component';
+import { FormRfiComponent } from './form-rfi/form-rfi.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FooterComponent } from './footer/footer.component';
     PrivateNotesComponent,
     LoginComponent,
     UploadComponent,
-    FooterComponent
+    FooterComponent,
+    FormRfiComponent
   ],
   imports: [
     BrowserModule,
