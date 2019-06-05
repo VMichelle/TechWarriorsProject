@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore'
+import { registerInterface } from './userInterface';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +10,18 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 export class RegServiceService {
 
-  constructor(private firebase: AngularFireDatabase) { }
-  registeredUsers: AngularFireList<any>;
+  registeredUsers: AngularFirestoreCollection<registerInterface>;
+
+  constructor( private afs: AngularFirestore ) {
+
+    this.registeredUsers = this.afs.collection('form');
+
+   }
+  
+  
+
+  // this.locations = this.afs.collection('form').valueChanges();
+  
 
   form = new FormGroup({
     $key: new FormControl(null),
@@ -24,13 +36,9 @@ export class RegServiceService {
     return this.registeredUsers.snapshotChanges();
   }
 
-  insertUser(user){
-    this.registeredUsers.push({
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
-      password: user.password,
-    });
+  insertUser(user: registerInterface){
+    console.log(user);
+    this.registeredUsers.add(user);
   }
 
 }

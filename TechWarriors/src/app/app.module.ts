@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFireStoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,7 +44,7 @@ import { environment } from '../environments/environment';
     ReactiveFormsModule,
     FormsModule,
     AngularFireStorageModule,
-    AngularFireStoreModule
+    AngularFirestoreModule
   ],
   providers: [RegServiceService],
   bootstrap: [AppComponent]
