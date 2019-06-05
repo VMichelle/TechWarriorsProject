@@ -5,6 +5,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 @Injectable({
   providedIn: 'root'
 })
+
 export class RegServiceService {
 
   constructor(private firebase: AngularFireDatabase) { }
