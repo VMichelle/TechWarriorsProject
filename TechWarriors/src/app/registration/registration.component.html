@@ -2,7 +2,53 @@
 
 <h1>Registration</h1>
 
-<form #register="ngForm" (ngSubmit)="onSubmit()">
+<div>
+  <div>
+    <form [formGroup]="this.regService.form" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="$key">
+      <div class="form-group">
+        <label>First Name</label>
+        <input formControlName="firstName" class="form-control" [ngClass]="{'is-invalid' :submitted && formControls.firstName.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.firstName.errors">
+          This field is required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input formControlName="lastName" class="form-control" [ngClass]="{'is-invalid' :submitted && formControls.lastName.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.lastName.errors">
+            This field is required!
+          </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input formControlName="email" class="form-control" type="email" [ngClass]="{'is-invalid' :submitted && formControls.email.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.email.errors">
+            You must enter a valid email address.
+          </div>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input formControlName="password" class="form-control" type="password" [ngClass]="{'is-invalid' :submitted && formControls.password.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.password.errors">
+            Password must be at least 6 characters in length.
+          </div>
+      </div>
+      <div class="form-group">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    <div *ngIf="showSuccessMessage">
+      Submitted Successfully.
+    </div>
+  </div>
+</div>
+
+<div>
+  {{formControls.firstName}}
+</div>
+
+<!-- <form #register="ngForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="firstName">First Name</label>
     <br>
@@ -44,4 +90,4 @@
   </div>
 
   <button *ngIf="password.valid && email.valid && lastName.valid && firstName.valid" type="submit">Submit</button>
-</form>
+</form> -->
