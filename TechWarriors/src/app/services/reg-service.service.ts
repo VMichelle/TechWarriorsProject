@@ -27,12 +27,12 @@ export class RegServiceService {
     $key: new FormControl(null),
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.email),
+    email: new FormControl('', [Validators.email, Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+(@midlandu\.edu)$')]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
   });
 
   getUsers(){
-    this.registeredUsers = this.firebase.list('users');
+    // this.registeredUsers = this.firebase.list('users');
     return this.registeredUsers.snapshotChanges();
   }
 
