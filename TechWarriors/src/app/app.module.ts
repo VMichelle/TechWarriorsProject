@@ -56,6 +56,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FooterComponent } from './footer/footer.component';
+import { FileDropDirective } from './upload/file-drop.directive';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { FooterComponent } from './footer/footer.component';
     PrivateNotesComponent,
     LoginComponent,
     UploadComponent,
-    FooterComponent
+    FooterComponent,
+    FileDropDirective
   ],
   imports: [
     BrowserModule,
