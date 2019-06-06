@@ -4,13 +4,14 @@
 
 export const environment = {
   production: false,
-  firebase: {
-    apiKey: 'AIzaSyBEupOo_Il2tkQBrz7HJpK66Wq2RKY81bU',
-    authDomain: 'midland-techwarriors.firebaseapp.com',
-    databaseURL: 'https://midland-techwarriors.firebaseio.com',
-    projectId: 'midland-techwarriors',
-    storageBucket: 'midland-techwarriors.appspot.com',
-    messagingSenderId: '863967697339'
+  firebaseConfig : {
+    apiKey: "AIzaSyCx4_9HwkIv3feF77HXqjUyRGTfrA4AlA0",
+    authDomain: "techwarriors-1c02e.firebaseapp.com",
+    databaseURL: "https://techwarriors-1c02e.firebaseio.com",
+    projectId: "techwarriors-1c02e",
+    storageBucket: "techwarriors-1c02e.appspot.com",
+    messagingSenderId: "975946604095",
+    appId: "1:975946604095:web:61cc9a9731f5bc91"
   }
 };
 
