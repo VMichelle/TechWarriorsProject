@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from ‘@angular/fire/database’;
+import { AngularFireStorageModule } from ‘@angular/fire/storage’;
+import { AngularFirestoreModule } from ‘@angular/fire/firestore’;
+import { AngularFireAuthModule } from ‘@angular/fire/auth’;
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -95,7 +99,11 @@ import { FooterComponent } from './footer/footer.component';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    FormsModule
+    FormsModule,
+ AngularFireModule,
+ AngularFireDatabaseModule,
+AngularFireStorageModule,
+AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

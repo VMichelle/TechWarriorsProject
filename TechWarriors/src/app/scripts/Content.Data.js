@@ -1,17 +1,7 @@
-import { Injectable } from '@angular/core';
-import { AngularFireModule } from '@angular/fire';
-@Injectable({
-  providedIn: 'root'
-})
-export class ContentAPIService {
-
-  constructor() { }
-
-
-  addContent() {function(data) {
+Content.prototype.addContent = function(data) {
     var collection = firebase.firestore().collection('content');
     return collection.add(data);
-  };}
+  };
 
  Content.prototype.getAllContent = function(renderer) {
     var query = firebase.firestore()
@@ -58,4 +48,3 @@ Content.prototype.getFilteredContent = function(filters, renderer) {
   
     this.getDocumentsInQuery(query, renderer);
   };
-}
