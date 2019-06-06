@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "midland-techwarriors"
+    "default": "midland-techwarriors",
+    "Eric's techwarrior database": "techwarriors-1c02e"
   }
 }
