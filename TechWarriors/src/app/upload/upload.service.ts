@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Upload } from './upload.module';
 import { AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 // Not sure if I need the following 3 lines of code DJ
 // @Injectable({
@@ -11,7 +12,7 @@ import * as firebase from 'firebase';
 @Injectable()
 export class UploadService {
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase, private storage: AngularFireStorage) { }
 
   pushUpload(upload: Upload) {
     let storageRef = firebase.storage().ref();
