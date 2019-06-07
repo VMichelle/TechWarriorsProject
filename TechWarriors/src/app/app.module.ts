@@ -44,15 +44,6 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatChipsModule} from '@angular/material/chips';
-import { AppComponent } from './app.component';
-import { HomepageComponent } from './homepage/homepage.component';
-import { HeaderComponent } from './header/header.component';
-import { AboutComponent } from './about/about.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { PublicContentComponent } from './public-content/public-content.component';
-import { PublicCommentsComponent } from './public-comments/public-comments.component';
-import { PrivateNotesComponent } from './private-notes/private-notes.component';
-import { AppRoutingModule } from './app-routing.module';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -116,11 +107,11 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
-    RouterLinkDelayModule
-    // AngularFireModule.initializeApp(environment.firebaseConfig)
-    // AngularFireDatabaseModule
-    // ReactiveFormsModule
-    // AngularFireStorageModule
+    RouterLinkDelayModule,
+    // AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    ReactiveFormsModule,
+    AngularFireStorageModule
   ],
   providers: [RegServiceService],
   bootstrap: [AppComponent]
