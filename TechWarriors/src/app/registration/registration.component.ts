@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RegServiceService } from '../services/reg-service.service'
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss']
 })
-export class RegistrationComponent {
+export class RegistrationComponent implements OnInit{
 
   registerForm: FormGroup;
   errorMessage: string = '';
@@ -20,13 +20,17 @@ export class RegistrationComponent {
     private router: Router,
     private fb: FormBuilder
   ) {
-    this.createForm();
+    // this.createForm();
    }
+
+   ngOnInit() {
+    this.createForm();
+  }
 
    createForm() {
      this.registerForm = this.fb.group({
-       email: ['', Validators.pattern('^[a-zA-Z0-9._%+-]+(@midlandu\.edu)$')],
-       password: ['',Validators.required]
+       email: ['', [Validators.pattern('^[a-zA-Z0-9._%+-]+(@midlandu\.edu)$')]],
+       password: ['',[Validators.required]],
      });
    }
 
@@ -40,7 +44,6 @@ export class RegistrationComponent {
      }, err => {
        console.log(err);
        this.errorMessage = err.message;
-      //  this.successMessage = "";
      })
    }
 
