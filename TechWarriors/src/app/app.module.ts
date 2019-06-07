@@ -1,20 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-<<<<<<< HEAD
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireAuthModule } from "@angular/fire/auth";
-
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { RouterLinkDelayModule } from '@bcodes/ngx-routerlink-delay';
-=======
-// import { AngularFireModule } from '@angular/fire';
-// import { AngularFireDatabaseModule } from '@angular/fire/database';
-// import { AngularFireStorageModule } from '@angular/fire/storage';
-// import { AngularFirestoreModule } from '@angular/fire/firestore';
->>>>>>> de7d55d1ce83887cb87c22aedcaaa929e68606cf
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -26,12 +17,9 @@ import { PublicCommentsComponent } from './public-comments/public-comments.compo
 import { PrivateNotesComponent } from './private-notes/private-notes.component';
 import { LoginComponent } from './login/login.component';
 import { UploadComponent } from './upload/upload.component';
-
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RegServiceService } from './services/reg-service.service';
 import { environment } from '../environments/environment';
-
-
 
 //Angular Material Components
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -56,6 +44,15 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatChipsModule} from '@angular/material/chips';
+import { AppComponent } from './app.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { HeaderComponent } from './header/header.component';
+import { AboutComponent } from './about/about.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { PublicContentComponent } from './public-content/public-content.component';
+import { PublicCommentsComponent } from './public-comments/public-comments.component';
+import { PrivateNotesComponent } from './private-notes/private-notes.component';
+import { AppRoutingModule } from './app-routing.module';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -117,19 +114,13 @@ import { FooterComponent } from './footer/footer.component';
     MatSortModule,
     MatPaginatorModule,
     FormsModule,
-    // AngularFireModule.initializeApp(environment.firebaseConfig),
-    // AngularFireDatabaseModule,
-    ReactiveFormsModule,
-<<<<<<< HEAD
-    AngularFireStorageModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
-    RouterLinkDelayModule,
-=======
-    FormsModule,
-    // AngularFireStorageModule,
-    // AngularFirestoreModule
->>>>>>> de7d55d1ce83887cb87c22aedcaaa929e68606cf
+    RouterLinkDelayModule
+    // AngularFireModule.initializeApp(environment.firebaseConfig)
+    // AngularFireDatabaseModule
+    // ReactiveFormsModule
+    // AngularFireStorageModule
   ],
   providers: [RegServiceService],
   bootstrap: [AppComponent]
