@@ -56,7 +56,8 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FooterComponent } from './footer/footer.component';
 import { DropZoneDirective } from './drop-zone.directive';
-import { FileUploadComponent } from './file-upload/file-upload.component';
+import { UploadTaskComponent } from './upload-task/upload-task.component';
+import { UploaderComponent } from './uploader/uploader.component'
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
     LoginComponent,
     FooterComponent,
     DropZoneDirective,
-    FileUploadComponent,
+    UploadTaskComponent,
+    UploaderComponent
     
   ],
   imports: [
