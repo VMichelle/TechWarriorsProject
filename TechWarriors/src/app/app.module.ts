@@ -15,7 +15,6 @@ import { PublicContentComponent } from './public-content/public-content.componen
 import { PublicCommentsComponent } from './public-comments/public-comments.component';
 import { PrivateNotesComponent } from './private-notes/private-notes.component';
 import { LoginComponent } from './login/login.component';
-import { UploadComponent } from './upload/upload.component';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RegServiceService } from './services/reg-service.service';
@@ -56,7 +55,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FooterComponent } from './footer/footer.component';
-import { FileDropDirective } from './upload/file-drop.directive';
+import { DropZoneDirective } from './drop-zone.directive';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+
 
 @NgModule({
   declarations: [
@@ -69,9 +70,10 @@ import { FileDropDirective } from './upload/file-drop.directive';
     PublicCommentsComponent,
     PrivateNotesComponent,
     LoginComponent,
-    UploadComponent,
     FooterComponent,
-    FileDropDirective
+    DropZoneDirective,
+    FileUploadComponent,
+    
   ],
   imports: [
     BrowserModule,
