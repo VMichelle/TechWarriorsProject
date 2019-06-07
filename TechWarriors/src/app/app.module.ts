@@ -4,6 +4,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from "@angular/fire/auth";
+
+import { RouterLinkDelayModule } from '@bcodes/ngx-routerlink-delay';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -111,7 +114,9 @@ import { FooterComponent } from './footer/footer.component';
     AngularFireDatabaseModule,
     ReactiveFormsModule,
     AngularFireStorageModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    RouterLinkDelayModule,
   ],
   providers: [RegServiceService],
   bootstrap: [AppComponent]
