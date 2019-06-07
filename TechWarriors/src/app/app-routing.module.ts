@@ -5,6 +5,7 @@ import { AuthGenericService } from './services/auth-generic.service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AboutComponent } from './about/about.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { PublicContentComponent } from './public-content/public-content.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,9 @@ const routes: Routes = [
   { path: 'homepage', component: HomepageComponent },
   { path: 'about', component: AboutComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path: '**', redirectTo: '/homepage', pathMatch: 'full' }
+  { path: 'content', component: PublicContentComponent},
+  { path: '**', redirectTo: '/homepage', pathMatch: 'full' },
+  { path: 'user', component: PublicContentComponent}
 ];
 
 @NgModule({

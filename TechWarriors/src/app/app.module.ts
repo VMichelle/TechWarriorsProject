@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+<<<<<<< HEAD
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -7,6 +8,12 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 
 import { RouterLinkDelayModule } from '@bcodes/ngx-routerlink-delay';
+=======
+// import { AngularFireModule } from '@angular/fire';
+// import { AngularFireDatabaseModule } from '@angular/fire/database';
+// import { AngularFireStorageModule } from '@angular/fire/storage';
+// import { AngularFirestoreModule } from '@angular/fire/firestore';
+>>>>>>> de7d55d1ce83887cb87c22aedcaaa929e68606cf
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -110,13 +117,19 @@ import { FooterComponent } from './footer/footer.component';
     MatSortModule,
     MatPaginatorModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule,
+    // AngularFireModule.initializeApp(environment.firebaseConfig),
+    // AngularFireDatabaseModule,
     ReactiveFormsModule,
+<<<<<<< HEAD
     AngularFireStorageModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
     RouterLinkDelayModule,
+=======
+    FormsModule,
+    // AngularFireStorageModule,
+    // AngularFirestoreModule
+>>>>>>> de7d55d1ce83887cb87c22aedcaaa929e68606cf
   ],
   providers: [RegServiceService],
   bootstrap: [AppComponent]
