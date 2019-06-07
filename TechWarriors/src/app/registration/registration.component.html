@@ -13,8 +13,12 @@
     <label class="error">{{errorMessage}}</label>
     <label class="success">{{successMessage}}</label>
   </div>
-  <button type="submit" (click)="tryRegister(registerForm.value)" class="btn btn-default">Register</button>
+  <button type="submit" (click)="tryRegister(registerForm.value)"><a [bcRouterLink]="['/login']" [navigationDelay]="3000">Register</a></button>
 </form>
+
+<div *ngIf="successMessage">
+  Submitted Successfully.
+</div>
 
 <!-- <div>
   <div>
