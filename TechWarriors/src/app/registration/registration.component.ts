@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RegServiceService } from '../services/reg-service.service'
-import { Router, Params } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -12,7 +12,8 @@ export class RegistrationComponent {
 
   registerForm: FormGroup;
   errorMessage: string = '';
-  successMessage: string = '';
+  // successMessage: string = '';
+  successMessage: boolean;
 
   constructor(
     public authService: RegServiceService,
@@ -24,7 +25,7 @@ export class RegistrationComponent {
 
    createForm() {
      this.registerForm = this.fb.group({
-       email: ['', Validators.required ],
+       email: ['', Validators.pattern('^[a-zA-Z0-9._%+-]+(@midlandu\.edu)$')],
        password: ['',Validators.required]
      });
    }
@@ -34,11 +35,12 @@ export class RegistrationComponent {
      .then(res => {
        console.log(res);
        this.errorMessage = "";
-       this.successMessage = "Your account has been created";
+       this.successMessage = true;
+       setTimeout(() => this.successMessage = false, 3000);
      }, err => {
        console.log(err);
        this.errorMessage = err.message;
-       this.successMessage = "";
+      //  this.successMessage = "";
      })
    }
 
