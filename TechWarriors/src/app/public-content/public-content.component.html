@@ -1,3 +1,49 @@
-<p>
-  public-content works!
-</p>
+
+<!-- test accordion -->
+
+
+
+<div class="darkBlue welcomeContainer">
+<h1 class="mat-h1 welcome">Welcome, Tech Warrior {{firstName}}!</h1></div>
+<br> 
+<table color="primary" mat-table [dataSource]="dataSource"  class="contentTable">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+  
+        
+           
+  Title Column
+  <ng-container matColumnDef="title">
+    <th mat-header-cell class="tableHeading" *matHeaderCellDef> <h5>Title</h5></th>
+    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="image">
+    <th mat-header-cell class="tableHeading"  *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let element"><img class="contentPreview" src="https://firebasestorage.googleapis.com/v0/b/midland-techwarriors.appspot.com/o/MUCodeAcademy-3473.jpg?alt=media&token=f59e839b-5720-4556-8693-319ef7fc9aa1"> {{element.image}} </td>
+  </ng-container>
+
+  <!-- Description Column -->
+  <ng-container matColumnDef="description">
+    <th  mat-header-cell class="tableHeading" *matHeaderCellDef><h5>Description </h5> </th>
+    <td mat-cell *matCellDef="let element"> {{element.description}}</td>
+  </ng-container>
+
+  <!-- URLColumn -->
+  <ng-container matColumnDef="url">
+    <th  mat-header-cell class="tableHeading"  *matHeaderCellDef> <h5>Read More</h5> </th>
+    <td mat-cell id="url" *matCellDef="let element"> {{element.url}} </td> 
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <th mat-header-cell class="tableHeading"   *matHeaderCellDef><h5> Type</h5></th>
+
+    <td mat-cell *matCellDef="let element"> {{element.type}} </td> 
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<div><br></div>
