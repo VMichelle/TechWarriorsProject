@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+// import { AngularFireModule } from '@angular/fire';
+// import { AngularFireDatabaseModule } from '@angular/fire/database';
+// import { AngularFireStorageModule } from '@angular/fire/storage';
+// import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -107,12 +107,12 @@ import { FooterComponent } from './footer/footer.component';
     MatSortModule,
     MatPaginatorModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule,
+    // AngularFireModule.initializeApp(environment.firebaseConfig),
+    // AngularFireDatabaseModule,
     ReactiveFormsModule,
     FormsModule,
-    AngularFireStorageModule,
-    AngularFirestoreModule
+    // AngularFireStorageModule,
+    // AngularFirestoreModule
   ],
   providers: [RegServiceService],
   bootstrap: [AppComponent]
