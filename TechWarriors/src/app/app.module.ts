@@ -15,11 +15,7 @@ import { PublicContentComponent } from './public-content/public-content.componen
 import { PublicCommentsComponent } from './public-comments/public-comments.component';
 import { PrivateNotesComponent } from './private-notes/private-notes.component';
 import { LoginComponent } from './login/login.component';
-<<<<<<< HEAD
 
-=======
-import { UploadComponent } from './upload/upload.component';
->>>>>>> 2c4fa18b6d191b3e0306ffe169f2feb9917be900
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RegServiceService } from './services/reg-service.service';
 import { environment } from '../environments/environment';
