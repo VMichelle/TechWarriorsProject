@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'registration', component: RegistrationComponent },
   { path: 'content', component: PublicContentComponent},
   { path: '**', redirectTo: '/homepage', pathMatch: 'full' },
+  { path: 'user', component: PublicContentComponent}
 ];
 
 @NgModule({
