@@ -1,4 +1,24 @@
-<app-header></app-header>
-<p>
-  login works!
-</p>
+<h1 class="header">Login</h1>
+<div>
+  <div class="row">
+    <div>
+      <form [formGroup]="loginForm">
+        <div>
+          <label>Email address</label>
+          <input type="email" formControlName="email">
+        </div>
+        <div>
+          <label>Password</label>
+          <input type="password" formControlName="password">
+          <label class="error">{{errorMessage}}</label>
+        </div>
+        <button type="submit" (click)="tryLogin(loginForm.value)">Login</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div>
+      <p>No account yet? <a href="/registration">Create an account</a></p>
+    </div>
+  </div>
+</div>
