@@ -17,3 +17,9 @@ a{
     padding: 5px;
     margin-right: 10px;
 }
+
+@media screen and (max-width: 800px) {
+    .links {
+      display: none;
+    }
+  }

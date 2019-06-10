@@ -20,9 +20,26 @@
 
 .navLink{
     padding: 20px;
+    text-align: right;
 }
 
 .content{
     display: flex;
     align-items: center;
 }
+.nameTitle{
+    margin-left: 20px;
+    font-size: 3vw;
+}
+
+@media screen and (max-width: 800px) {
+    .headerLogo {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .nameTitle {
+      display: none;
+    }
+  }
