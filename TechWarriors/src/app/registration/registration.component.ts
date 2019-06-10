@@ -3,6 +3,7 @@ import { RegServiceService } from '../services/reg-service.service'
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -12,25 +13,19 @@ export class RegistrationComponent implements OnInit{
 
   registerForm: FormGroup;
   errorMessage: string = '';
-  // successMessage: string = '';
   successMessage: boolean;
+  submitted: boolean;
 
   constructor(
     public authService: RegServiceService,
     private router: Router,
     private fb: FormBuilder
-  ) {
-    // this.createForm();
-   }
+  ) { }
 
    ngOnInit() {
-    this.createForm();
-  }
-
-   createForm() {
      this.registerForm = this.fb.group({
        email: ['', [Validators.pattern('^[a-zA-Z0-9._%+-]+(@midlandu\.edu)$')]],
-       password: ['',[Validators.required]],
+       password: ['', [Validators.required]],
      });
    }
 
@@ -46,6 +41,15 @@ export class RegistrationComponent implements OnInit{
        this.errorMessage = err.message;
      })
    }
+
+  //  onSubmit(){
+  //   this.submitted = true;
+  //   if (this.tryRegister.arguments.valid) {
+  //     if (this.authService.doRegister.arguments
+  //       this.regService.insertUser(this.userResponse);
+  //       this.showSuccessMessage = true;
+  //       setTimeout(() => this.showSuccessMessage = false, 3000);
+  //  }
 
 }
 
