@@ -56,6 +56,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FooterComponent } from './footer/footer.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -69,7 +71,8 @@ import { FooterComponent } from './footer/footer.component';
     PrivateNotesComponent,
     LoginComponent,
     UploadComponent,
-    FooterComponent
+    FooterComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -107,14 +110,14 @@ import { FooterComponent } from './footer/footer.component';
     MatSortModule,
     MatPaginatorModule,
     FormsModule,
-    // AngularFireModule.initializeApp(environment.firebaseConfig),
-    // AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     ReactiveFormsModule,
     FormsModule,
-    // AngularFireStorageModule,
-    // AngularFirestoreModule
+    AngularFirestoreModule
   ],
   providers: [RegServiceService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
+
 })
 export class AppModule { }

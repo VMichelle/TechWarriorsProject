@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MockResourceLoader } from '@angular/compiler/testing';
+import { Router } from '@angular/router';
+import { FirebaseService } from '../services/firebase.service';
+
 export interface Content {
   title: string;
   description: string;
@@ -27,13 +30,22 @@ const ELEMENT_DATA: Content[] = [
   styleUrls: ['./public-content.component.scss']
 })
 export class PublicContentComponent implements OnInit {
-   firstName = 'Mary';
-  displayedColumns: string[] = ['image', 'title', 'type', 'description', 'url' ];
-  dataSource = ELEMENT_DATA;
-  panelOpenState = false;
-  constructor() { }
+
+  items: Array<any>;
+  //  firstName = 'Mary';
+  // displayedColumns: string[] = ['image', 'title', 'type', 'description', 'url' ];
+  // dataSource = ELEMENT_DATA;
+  // panelOpenState = false;
+  constructor(
+    public firebaseService: FirebaseService,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
+    this.firebaseService.getFiles()
+      .subscribe(result => {
+        this.items = result;
+      })
   }
 
 }
