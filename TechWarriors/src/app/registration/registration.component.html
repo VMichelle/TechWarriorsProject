@@ -17,10 +17,11 @@
             registerForm.get('password').touched || registerForm.get('password').dirty}">
             <label *ngIf="registerForm.error" class="error">{{errorMessage}}</label>
           </div>
+          <button *ngIf="registerForm.valid"  type="submit" (click)="tryRegister(registerForm.value).valid"><a [bcRouterLink]="['/login']" [navigationDelay]="3000">Register</a></button>
+        </form>
         <div *ngIf="successMessage">
           Submitted Successfully.
         </div>
-      </form>
     </div>
   </div>
 </div>
