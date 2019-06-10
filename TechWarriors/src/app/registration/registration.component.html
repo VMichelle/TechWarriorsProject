@@ -9,13 +9,13 @@
     registerForm.get('email').touched || registerForm.get('email').dirty}">
   </div>
   <div *ngIf="registerForm.get('email').errors">
-    Email is required
+    Midland University Email is required!
   </div>
   <div class="form-group">
     <label>Password</label>
     <input type="password" class="form-control" formControlName="password" [ngClass]="{'has-error' : registerForm.get('password').errors  && 
     registerForm.get('password').touched || registerForm.get('password').dirty}">
-    <label class="error">{{errorMessage}}</label>
+    <label *ngIf="registerForm.error" class="error">{{errorMessage}}</label>
   </div>
   <button *ngIf="registerForm.valid"  type="submit" (click)="tryRegister(registerForm.value).valid"><a [bcRouterLink]="['/login']" [navigationDelay]="3000">Register</a></button>
 </form>
