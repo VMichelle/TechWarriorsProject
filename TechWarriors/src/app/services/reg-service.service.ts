@@ -1,6 +1,4 @@
 import { Injectable } from "@angular/core";
-// import 'rxjs/add/operator/toPromise';
-import {Observable} from 'rxjs';  
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 
@@ -11,13 +9,20 @@ export class RegServiceService {
    public afAuth: AngularFireAuth
  ){}
 
+ SendVerificationMail() {
+  return this.afAuth.auth.currentUser.sendEmailVerification()
+  }
+ 
   doRegister(value){
+    
     return new Promise<any>((resolve, reject) => {
       firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
       .then(res => {
         resolve(res);
+        this.SendVerificationMail(); 
       }, err => reject(err))
-    })
+      
+    }) 
   }
 
  
