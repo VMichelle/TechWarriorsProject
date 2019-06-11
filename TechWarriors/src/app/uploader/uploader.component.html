@@ -1,0 +1,44 @@
+<!-- This is the component that is visiable to the user -->
+<main>
+    <form id="my-awesome-dropzone">
+        <div class="dropzone-previews"></div> 
+        <!-- this is were the previews should be shown. -->
+      
+        <!-- Now setup your input fields -->
+        <input placeholder="Title" type="title" title="title" id="title" />
+        <input placeholder="Description" type="description" name="description" id="description" />
+<div class="dropzone" 
+     dropzone
+     (hovered)="toggleHover($event)"
+     (dropped)="onDrop($event)"
+     [class.hovering]="isHovering">
+
+     <h3>AngularFire Drop Zone</h3>
+     <p>Drag and Drop a File</p>
+     <div class="file">
+        <label class="file-label">
+
+        <input class="file-input" type="file" (change)="onClick($event.target.files)">
+
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fa fa-upload"></i>
+            </span>
+            <span class="file-label">
+              or choose a file…
+            </span>
+          </span>
+        </label>
+      </div>
+    </div>
+
+<h3>Uploads</h3>
+<div *ngFor="let file of files">
+  <upload-task [file]="file"></upload-task>
+</div>
+
+  <button type="submit">Submit data and files!</button>
+</form>
+
+
+</main>

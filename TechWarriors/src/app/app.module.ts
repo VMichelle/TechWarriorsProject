@@ -1,27 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { AngularFireModule } from '@angular/fire';
-// import { AngularFireDatabaseModule } from '@angular/fire/database';
-// import { AngularFireStorageModule } from '@angular/fire/storage';
-// import { AngularFirestoreModule } from '@angular/fire/firestore';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { RouterLinkDelayModule } from '@bcodes/ngx-routerlink-delay';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HeaderComponent } from './header/header.component';
-import { AboutComponent } from './about/about.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { PublicContentComponent } from './public-content/public-content.component';
 import { PublicCommentsComponent } from './public-comments/public-comments.component';
 import { PrivateNotesComponent } from './private-notes/private-notes.component';
 import { LoginComponent } from './login/login.component';
-import { UploadComponent } from './upload/upload.component';
-
+import { TestimonialComponent } from './testimonial/testimonial.component';
+import { StarRatingModule } from 'angular-star-rating';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RegServiceService } from './services/reg-service.service';
 import { environment } from '../environments/environment';
-
-
+import { FooterComponent } from './footer/footer.component';
+import { DropZoneDirective } from './drop-zone.directive';
+import { UploadTaskComponent } from './upload-task/upload-task.component';
+import { UploaderComponent } from './uploader/uploader.component'
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 //Angular Material Components
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -55,30 +58,46 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+<<<<<<< HEAD
 import { FooterComponent } from './footer/footer.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
 import { ViewContentComponent } from './view-content/view-content.component';
+=======
+
+>>>>>>> 8d0854a5743296f188b55f45d9f3d732e388eb50
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     HeaderComponent,
-    AboutComponent,
     RegistrationComponent,
     PublicContentComponent,
     PublicCommentsComponent,
     PrivateNotesComponent,
     LoginComponent,
+<<<<<<< HEAD
     UploadComponent,
     FooterComponent,
     ViewContentComponent,
     
+=======
+    FooterComponent,
+    DropZoneDirective,
+    UploadTaskComponent,
+    UploaderComponent,
+    TestimonialComponent,
+    FooterComponent,
+    TestimonialsComponent
+>>>>>>> 8d0854a5743296f188b55f45d9f3d732e388eb50
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    StarRatingModule.forRoot(),
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatCheckboxModule,
@@ -112,16 +131,31 @@ import { ViewContentComponent } from './view-content/view-content.component';
     MatSortModule,
     MatPaginatorModule,
     FormsModule,
+<<<<<<< HEAD
     AngularFireModule.initializeApp(environment.firebaseConfig),
     ReactiveFormsModule,
     FormsModule,
     AngularFirestoreModule
+=======
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    RouterLinkDelayModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    ReactiveFormsModule,
+    AngularFireStorageModule
+>>>>>>> 8d0854a5743296f188b55f45d9f3d732e388eb50
   ],
   providers: [RegServiceService],
   bootstrap: [AppComponent],
   
 
 })
+<<<<<<< HEAD
 export class AppModule {
   
  }
+=======
+
+export class AppModule { }
+>>>>>>> 8d0854a5743296f188b55f45d9f3d732e388eb50

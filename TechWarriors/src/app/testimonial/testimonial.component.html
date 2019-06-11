@@ -1,0 +1,34 @@
+<h1 class="header">Testimonial</h1>
+<div>    
+    <form [formGroup]="registrationFormGroup" (ngSubmit)="registrationSubmit()">
+        <fieldset class="form-display">
+            <div>
+                <label class="font-size" for="userName">Name</label>
+                <input class="inputField" type="text" name="userName" placeholder="First Name" id="userName">
+            </div>
+            <br>
+            <div>
+                <label class="font-size" for="testimonialName">Testimonial Title</label>
+                <input class="inputField" type="text" name="testimonialName" placeholder="Testimonial Name"
+                    id="testimonialName">
+            </div>
+            <br>
+            <span *ngFor="let starred of stars; let i = index"
+            (click)="rate(i + (starred ? (value > i + 1 ? 1 : 0) : 1))">
+            <ng-container *ngIf="starred; else noStar">⭐</ng-container>
+            <ng-template #noStar>⚪</ng-template>
+            </span>
+            <br>
+            <br>
+            <p class="font-size">Testimonial</p>
+
+            <div>
+                <textarea rows="10" cols="100" maxlength="1000" (input)="textfield = $event.target.value"></textarea>
+                <p>Characters remaining: {{1000 - textfield.length}}</p>
+            </div>
+
+            <br>
+            <input class="button" type="submit">
+        </fieldset>
+    </form>
+</div>
