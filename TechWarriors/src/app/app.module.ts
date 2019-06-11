@@ -15,12 +15,16 @@ import { PublicContentComponent } from './public-content/public-content.componen
 import { PublicCommentsComponent } from './public-comments/public-comments.component';
 import { PrivateNotesComponent } from './private-notes/private-notes.component';
 import { LoginComponent } from './login/login.component';
-import { UploadComponent } from './upload/upload.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
 import { StarRatingModule } from 'angular-star-rating';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RegServiceService } from './services/reg-service.service';
 import { environment } from '../environments/environment';
+import { FooterComponent } from './footer/footer.component';
+import { DropZoneDirective } from './drop-zone.directive';
+import { UploadTaskComponent } from './upload-task/upload-task.component';
+import { UploaderComponent } from './uploader/uploader.component'
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 //Angular Material Components
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -54,8 +58,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { FooterComponent } from './footer/footer.component';
-import { TestimonialsComponent } from './testimonials/testimonials.component';
+
 
 @NgModule({
   declarations: [
@@ -67,7 +70,10 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     PublicCommentsComponent,
     PrivateNotesComponent,
     LoginComponent,
-    UploadComponent,
+    FooterComponent,
+    DropZoneDirective,
+    UploadTaskComponent,
+    UploaderComponent,
     TestimonialComponent,
     FooterComponent,
     TestimonialsComponent
