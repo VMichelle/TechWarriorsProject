@@ -1,32 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RegServiceService } from '../services/reg-service.service'
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss']
 })
-export class RegistrationComponent {
+export class RegistrationComponent implements OnInit{
 
   registerForm: FormGroup;
   errorMessage: string = '';
-  // successMessage: string = '';
   successMessage: boolean;
+  submitted: boolean;
 
   constructor(
     public authService: RegServiceService,
     private router: Router,
     private fb: FormBuilder
-  ) {
-    this.createForm();
-   }
+  ) { }
 
-   createForm() {
+   ngOnInit() {
      this.registerForm = this.fb.group({
-       email: ['', Validators.pattern('^[a-zA-Z0-9._%+-]+(@midlandu\.edu)$')],
-       password: ['',Validators.required]
+       email: ['', [Validators.pattern('^[a-zA-Z0-9._%+-]+(@midlandu\.edu)$')]],
+       password: ['', [Validators.required]],
      });
    }
 
@@ -40,9 +39,17 @@ export class RegistrationComponent {
      }, err => {
        console.log(err);
        this.errorMessage = err.message;
-      //  this.successMessage = "";
      })
    }
+
+  //  onSubmit(){
+  //   this.submitted = true;
+  //   if (this.tryRegister.arguments.valid) {
+  //     if (this.authService.doRegister.arguments
+  //       this.regService.insertUser(this.userResponse);
+  //       this.showSuccessMessage = true;
+  //       setTimeout(() => this.showSuccessMessage = false, 3000);
+  //  }
 
 }
 
