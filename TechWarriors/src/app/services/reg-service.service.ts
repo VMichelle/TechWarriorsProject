@@ -1,6 +1,13 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore'
+import { registerInterface } from './userInterface';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
+
+@Injectable({
+  providedIn: 'root'
+})
 
 @Injectable()
 export class RegServiceService {

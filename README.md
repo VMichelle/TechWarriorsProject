@@ -1,6 +1,6 @@
 Tech Warriors Website
 
-Client Lead: Dave
+Client Lead: Grayton
 
 Tech Lead: Ben
 

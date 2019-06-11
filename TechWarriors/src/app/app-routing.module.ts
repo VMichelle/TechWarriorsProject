@@ -3,17 +3,23 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { AuthGenericService } from './services/auth-generic.service';
 import { HomepageComponent } from './homepage/homepage.component';
-import { AboutComponent } from './about/about.component';
 import { RegistrationComponent } from './registration/registration.component';
-
+import { TestimonialComponent } from './testimonial/testimonial.component';
+import { PublicContentComponent } from './public-content/public-content.component';
+import { ViewContentComponent } from './view-content/view-content.component';
+import { UploaderComponent } from './uploader/uploader.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'homepage', component: HomepageComponent },
-  { path: 'about', component: AboutComponent },
+  { path: 'uploader',  component: UploaderComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path: '**', redirectTo: '/homepage', pathMatch: 'full' }
+  { path: 'testimonial', component: TestimonialComponent},
+  { path: 'content', component: PublicContentComponent},
+  { path: '**', redirectTo: '/homepage', pathMatch: 'full' },
+  { path: 'user', component: PublicContentComponent},
+  { path: 'details/:id', component: ViewContentComponent } // resolve:{data : EditContentResolver}
 ];
 
 @NgModule({
