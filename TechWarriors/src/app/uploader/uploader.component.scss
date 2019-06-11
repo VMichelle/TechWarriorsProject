@@ -24,3 +24,19 @@
   progress::-webkit-progress-value {
     transition: width 0.1s ease;
   }
+
+  .form{
+    display: flex;
+    align-items: left;
+    padding-left: 20px;
+    justify-content: left;
+    flex-direction: column; 
+    min-width: 80vw;
+    font-weight: 200;
+    height: 300px;
+    background: white;
+    margin: 10px 0;
+  }
+  .cen{
+    justify-content: center;
+  }

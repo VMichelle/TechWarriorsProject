@@ -15,11 +15,9 @@ export class UploaderComponent {
     this.isHovering = event;
   }
 
-  onDrop(files: FileList) {
+  onClick(files: FileList) {
     for (let i = 0; i < files.length; i++) {
       this.files.push(files.item(i));
     }
   }
-
-
 }
