@@ -2,13 +2,16 @@ import { Injectable } from '@angular/core';
 // import 'rxjs/add/operator/toPromise';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGenericService {
 
-  constructor(public afAuth: AngularFireAuth) { }
+  constructor(
+    public afAuth: AngularFireAuth,
+    private http: HttpClient) { }
 
   doLogin(value){
     return new Promise<any>((resolve, reject) => {
@@ -33,6 +36,10 @@ export class AuthGenericService {
         reject(err);
       })
     })
+  }
+
+  getSessionToken(uid){
+    return this.http.get(``);
   }
 
 }
