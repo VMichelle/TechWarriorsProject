@@ -5,6 +5,7 @@ import { AuthGenericService } from './services/auth-generic.service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AboutComponent } from './about/about.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { TestimonialComponent } from './testimonial/testimonial.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'homepage', component: HomepageComponent },
   { path: 'about', component: AboutComponent },
   { path: 'registration', component: RegistrationComponent },
+  { path: 'testimonial', component: TestimonialComponent},
   { path: '**', redirectTo: '/homepage', pathMatch: 'full' }
 ];
 

@@ -12,6 +12,8 @@ import { PublicCommentsComponent } from './public-comments/public-comments.compo
 import { PrivateNotesComponent } from './private-notes/private-notes.component';
 import { LoginComponent } from './login/login.component';
 import { UploadComponent } from './upload/upload.component';
+import { TestimonialComponent } from './testimonial/testimonial.component';
+import { StarRatingModule } from 'angular-star-rating';
 
 @NgModule({
   declarations: [
@@ -24,15 +26,18 @@ import { UploadComponent } from './upload/upload.component';
     PublicCommentsComponent,
     PrivateNotesComponent,
     LoginComponent,
-    UploadComponent
+    UploadComponent,
+    TestimonialComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StarRatingModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
