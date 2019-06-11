@@ -16,6 +16,8 @@ import { PublicCommentsComponent } from './public-comments/public-comments.compo
 import { PrivateNotesComponent } from './private-notes/private-notes.component';
 import { LoginComponent } from './login/login.component';
 import { UploadComponent } from './upload/upload.component';
+import { TestimonialComponent } from './testimonial/testimonial.component';
+import { StarRatingModule } from 'angular-star-rating';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RegServiceService } from './services/reg-service.service';
 import { environment } from '../environments/environment';
@@ -53,6 +55,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FooterComponent } from './footer/footer.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @NgModule({
   declarations: [
@@ -65,11 +68,16 @@ import { FooterComponent } from './footer/footer.component';
     PrivateNotesComponent,
     LoginComponent,
     UploadComponent,
-    FooterComponent
+    TestimonialComponent,
+    FooterComponent,
+    TestimonialsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    StarRatingModule.forRoot(),
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatCheckboxModule,
@@ -114,4 +122,5 @@ import { FooterComponent } from './footer/footer.component';
   providers: [RegServiceService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

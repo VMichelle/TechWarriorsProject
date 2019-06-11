@@ -4,11 +4,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthGenericService } from '../services/auth-generic.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'page-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   loginForm: FormGroup;
   errorMessage: string = '';
@@ -19,9 +19,6 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder
   ) { 
     this.createForm();
-  }
-
-  ngOnInit() {
   }
 
   createForm() {
