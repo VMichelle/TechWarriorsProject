@@ -58,7 +58,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+<<<<<<< HEAD
+import { FooterComponent } from './footer/footer.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
+import { ViewContentComponent } from './view-content/view-content.component';
+=======
 
+>>>>>>> 8d0854a5743296f188b55f45d9f3d732e388eb50
 
 @NgModule({
   declarations: [
@@ -70,6 +77,12 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     PublicCommentsComponent,
     PrivateNotesComponent,
     LoginComponent,
+<<<<<<< HEAD
+    UploadComponent,
+    FooterComponent,
+    ViewContentComponent,
+    
+=======
     FooterComponent,
     DropZoneDirective,
     UploadTaskComponent,
@@ -77,6 +90,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     TestimonialComponent,
     FooterComponent,
     TestimonialsComponent
+>>>>>>> 8d0854a5743296f188b55f45d9f3d732e388eb50
   ],
   imports: [
     BrowserModule,
@@ -117,6 +131,12 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatSortModule,
     MatPaginatorModule,
     FormsModule,
+<<<<<<< HEAD
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    ReactiveFormsModule,
+    FormsModule,
+    AngularFirestoreModule
+=======
     AngularFirestoreModule,
     AngularFireAuthModule,
     RouterLinkDelayModule,
@@ -124,9 +144,18 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     AngularFireDatabaseModule,
     ReactiveFormsModule,
     AngularFireStorageModule
+>>>>>>> 8d0854a5743296f188b55f45d9f3d732e388eb50
   ],
   providers: [RegServiceService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
+
 })
+<<<<<<< HEAD
+export class AppModule {
+  
+ }
+=======
 
 export class AppModule { }
+>>>>>>> 8d0854a5743296f188b55f45d9f3d732e388eb50
