@@ -6,6 +6,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AboutComponent } from './about/about.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { PublicContentComponent } from './public-content/public-content.component';
+import { ViewContentComponent } from './view-content/view-content.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full'},
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'registration', component: RegistrationComponent },
   { path: 'content', component: PublicContentComponent},
   { path: '**', redirectTo: '/homepage', pathMatch: 'full' },
-  { path: 'user', component: PublicContentComponent}
+  { path: 'user', component: PublicContentComponent},
+  { path: 'details/:id', component: ViewContentComponent } // resolve:{data : EditContentResolver}
 ];
 
 @NgModule({

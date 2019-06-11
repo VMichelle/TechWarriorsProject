@@ -58,6 +58,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { FooterComponent } from './footer/footer.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
+import { ViewContentComponent } from './view-content/view-content.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestor
     LoginComponent,
     UploadComponent,
     FooterComponent,
+    ViewContentComponent,
     
   ],
   imports: [
@@ -120,4 +122,6 @@ import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestor
   
 
 })
-export class AppModule { }
+export class AppModule {
+  
+ }

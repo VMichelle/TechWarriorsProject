@@ -5,7 +5,7 @@
 
 
 <div class="darkBlue welcomeContainer">
-<h1 class="mat-h1 welcome">Welcome, Tech Warrior {{item.payload.doc.data().UID}}!</h1></div>
+<h1 class="mat-h1 welcome">Welcome, Tech Warrior {{firstName}}!</h1></div>
 <br> 
 
 <div class="list-group files-list">
@@ -19,11 +19,11 @@
         <h5 class="mb-1">{{item.payload.doc.data().title}}</h5>
         <small>{{item.payload.doc.data().description}}</small>
       </div>
-      <!-- <div class="col col-md-2 actions-col">
-        <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">
-          <ion-icon class="icon" name="arrow-round-forward"></ion-icon>
+      <div class="col col-md-2 actions-col">
+        <button mat-icon-button (click)="viewDetails(item)" type="button">
+          <mat-icon>keyboard_arrow_right</mat-icon>
         </button>
-      </div> -->
+      </div>
     </div>
   </div>
 </div>
