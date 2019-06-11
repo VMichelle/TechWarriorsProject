@@ -58,14 +58,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
-<<<<<<< HEAD
-import { FooterComponent } from './footer/footer.component';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
 import { ViewContentComponent } from './view-content/view-content.component';
-=======
-
->>>>>>> 8d0854a5743296f188b55f45d9f3d732e388eb50
 
 @NgModule({
   declarations: [
@@ -77,12 +70,9 @@ import { ViewContentComponent } from './view-content/view-content.component';
     PublicCommentsComponent,
     PrivateNotesComponent,
     LoginComponent,
-<<<<<<< HEAD
-    UploadComponent,
     FooterComponent,
     ViewContentComponent,
     
-=======
     FooterComponent,
     DropZoneDirective,
     UploadTaskComponent,
@@ -90,7 +80,6 @@ import { ViewContentComponent } from './view-content/view-content.component';
     TestimonialComponent,
     FooterComponent,
     TestimonialsComponent
->>>>>>> 8d0854a5743296f188b55f45d9f3d732e388eb50
   ],
   imports: [
     BrowserModule,
@@ -131,12 +120,6 @@ import { ViewContentComponent } from './view-content/view-content.component';
     MatSortModule,
     MatPaginatorModule,
     FormsModule,
-<<<<<<< HEAD
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    ReactiveFormsModule,
-    FormsModule,
-    AngularFirestoreModule
-=======
     AngularFirestoreModule,
     AngularFireAuthModule,
     RouterLinkDelayModule,
@@ -144,18 +127,11 @@ import { ViewContentComponent } from './view-content/view-content.component';
     AngularFireDatabaseModule,
     ReactiveFormsModule,
     AngularFireStorageModule
->>>>>>> 8d0854a5743296f188b55f45d9f3d732e388eb50
   ],
   providers: [RegServiceService],
   bootstrap: [AppComponent],
   
 
 })
-<<<<<<< HEAD
-export class AppModule {
-  
- }
-=======
 
 export class AppModule { }
->>>>>>> 8d0854a5743296f188b55f45d9f3d732e388eb50
