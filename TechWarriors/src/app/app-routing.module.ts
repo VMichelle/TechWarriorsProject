@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthGenericService } from './services/auth-generic.service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { TestimonialComponent } from './testimonial/testimonial.component';
 import { PublicContentComponent } from './public-content/public-content.component';
 import { UploaderComponent } from './uploader/uploader.component';
 
@@ -14,9 +15,10 @@ const routes: Routes = [
   {path: 'upload', component: UploaderComponent},
   { path: 'homepage', component: HomepageComponent },
   { path: 'registration', component: RegistrationComponent },
+  { path: 'testimonial', component: TestimonialComponent},
   { path: 'content', component: PublicContentComponent},
-  { path: '**', redirectTo: '/homepage', pathMatch: 'full' },
-  { path: 'user', component: PublicContentComponent}
+  { path: 'user', component: PublicContentComponent},
+  { path: '**', redirectTo: '/homepage', pathMatch: 'full' }
 ];
 
 @NgModule({
