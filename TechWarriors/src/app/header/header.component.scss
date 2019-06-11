@@ -1,0 +1,45 @@
+//#ee7623 #0e2340 #e6e7e8 #ffffff
+
+//fonts Montserrat light, semibold, regular
+*{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.header{
+    height: 80px;
+    background-color: #ee7623;
+}
+
+.headerLogo{
+    height: 50px;
+    margin-left: 30px;
+}
+
+.navLink{
+    padding: 20px;
+    text-align: right;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+}
+.nameTitle{
+    margin-left: 20px;
+    font-size: 3vw;
+}
+
+@media screen and (max-width: 800px) {
+    .headerLogo {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .nameTitle {
+      display: none;
+    }
+  }

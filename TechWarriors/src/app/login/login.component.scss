@@ -1,13 +1,12 @@
 .header{
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 40px;
-  }
-  
-  .row{
-    margin-top: 10px;
-  }
-  
-  .error{
-    color: red;
-  }
+  text-align: center;
+  background-color: #0e2340;
+  color: #ffffff;
+}
+.container{
+  margin-left: calc(50vw - 270px);    
+  padding-bottom: 10px;
+}
+.error{
+  color: red;
+}

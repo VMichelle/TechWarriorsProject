@@ -1,46 +1,23 @@
-<div>
-    <div>
-
-        <h2>Testimonials</h2>
-        <div>
-            <p>Great School</p>
-            <p>A. Previous Student</p>
-            <span *ngFor="let starred of stars; let i = index"
-                (click)="rate(i + (starred ? (value > i + 1 ? 1 : 0) : 1))">
-                <ng-container *ngIf="starred; else noStar">⭐</ng-container>
-                <ng-template #noStar>⚪</ng-template>
-            </span>
-            <p>
-                This 8 week immersive course is catered to beginners with no previous design or technical experience.
-                Students will be taught the fundamentals of User Centered Design and learn to validate ideas through
-                user research, rapid prototyping & heuristic evaluation. The course will end with a capstone project
-                where students will take a new product idea from validation to launch. By the end of the course,
-                students will be ready to start a new career as a UX Designer, Freelance or turbo charge their current
-                professional trajectory.
-            </p>
-        </div>
-    </div>
-
-    <form>
+<h1 class="header">Testimonial</h1>
+<div>    
     <form [formGroup]="registrationFormGroup" (ngSubmit)="registrationSubmit()">
         <fieldset class="form-display">
             <div>
-                <label class="font-size" for="userName">User Name</label>
+                <label class="font-size" for="userName">Name</label>
                 <input class="inputField" type="text" name="userName" placeholder="First Name" id="userName">
             </div>
             <br>
             <div>
-                <label class="font-size" for="testimonialName">Testimonial Name</label>
+                <label class="font-size" for="testimonialName">Testimonial Title</label>
                 <input class="inputField" type="text" name="testimonialName" placeholder="Testimonial Name"
                     id="testimonialName">
             </div>
             <br>
-            <span (input)="i" *ngFor="let starred of stars; let i = index"
-                (click)="rate(i + (starred ? (value > i + 1 ? 1 : 0) : 1))">
-                <ng-container *ngIf="starred; else noStar">⭐</ng-container>
-                <ng-template #noStar>⚪</ng-template>
+            <span *ngFor="let starred of stars; let i = index"
+            (click)="rate(i + (starred ? (value > i + 1 ? 1 : 0) : 1))">
+            <ng-container *ngIf="starred; else noStar">⭐</ng-container>
+            <ng-template #noStar>⚪</ng-template>
             </span>
- 
             <br>
             <br>
             <p class="font-size">Testimonial</p>
@@ -54,5 +31,4 @@
             <input class="button" type="submit">
         </fieldset>
     </form>
-
 </div>

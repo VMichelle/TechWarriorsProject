@@ -1,0 +1,25 @@
+.footerSection{
+    background-color: #ee7623;
+    color: white;
+}
+
+.footerDescription{
+    max-width: 300px;
+}
+
+a{
+    color: white;
+}
+
+.footerLogo{
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .links {
+      display: none;
+    }
+  }

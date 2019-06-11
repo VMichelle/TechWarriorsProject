@@ -2,11 +2,11 @@ import { Component, OnInit, forwardRef, Input, HostBinding } from '@angular/core
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 @Component({
-  selector: 'rating-input',
+  selector: 'app-testimonial',
   templateUrl: './testimonial.component.html',
   styleUrls: ['./testimonial.component.scss'],
   providers: [{
-    provide: NG_VALUE_ACCESSOR, 
+    provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => TestimonialComponent),
     multi: true
   }]
@@ -45,7 +45,7 @@ export class TestimonialComponent implements ControlValueAccessor {
   // Update the model and changes needed for the view here.
   writeValue(rating: number): void {
     this.stars = this.stars.map((_, i) => rating > i);
-    this.onChange(this.value)
+    this.onChange(this.value);
   }
 
   // Allows Angular to register a function to call when the model (rating) changes.
