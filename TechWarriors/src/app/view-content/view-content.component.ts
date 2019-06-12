@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
   selector: 'app-view-content',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewContentComponent implements OnInit {
 
-  constructor() { }
+  item: any;
+
+  constructor(
+    public firebaseService: FirebaseService,
+    private route: ActivatedRoute,
+    // private router: Router,
+  ) { }
 
   ngOnInit() {
+    this.route.data.subscribe(routeData => {
+      let data = routeData['data'];
+      if (data) {
+        this.item = data.payload.data();
+        this.item.id = data.payload.id;
+      }
+    })
   }
+
+
 
 }

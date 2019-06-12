@@ -12,8 +12,8 @@ export class FirebaseService {
 //       return this.db.collection('/avatar').valueChanges()
 //   }
 
-  getUser(userKey){
-    return this.db.collection('users').doc(userKey).snapshotChanges();
+  getFile(userKey){
+    return this.db.collection('files').doc(userKey).snapshotChanges();
   }
 
 //   updateUser(userKey, value){
@@ -37,12 +37,12 @@ export class FirebaseService {
 //   }
 
 
-  createFile(value){
-    return this.db.collection('files').add({
-      UID: value.UID,
-      title: value.title,
-      description: value.description,
-      downloadUrl: "",
-    });
-  }
+  // createFile(value){
+  //   return this.db.collection('files').add({
+  //     UID: value.UID,
+  //     title: value.title,
+  //     description: value.description,
+  //     downloadUrl: "",
+  //   });
+  // }
 }
