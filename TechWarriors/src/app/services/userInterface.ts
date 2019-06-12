@@ -1,6 +1,5 @@
 export interface registerInterface{
-    firstName: string;
-    lastName: string;
+    id: string,
     email: string;
     password: string;
 }
