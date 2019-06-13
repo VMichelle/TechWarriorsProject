@@ -1,12 +1,21 @@
+#delay{
+    text-decoration: none;
+    color: black;
+}
 .header{
     text-align: center;
     background-color: #0e2340;
     color: #ffffff;
-}
+  }
 .container{
-    margin-left: calc(50vw - 270px);    
-    padding-bottom: 10px;
+  margin-left: calc(50vw - 100px);    
+  padding-bottom: 10px;
 }
 .error{
-    color: red;
-  }
+  color: red;
+}
+
+.bottomSpace{
+  min-height: 150px;
+  max-height: 300px;
+}

@@ -1,8 +1,14 @@
-import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { finalize, tap } from 'rxjs/operators';
+import { AngularFireAuth } from '@angular/fire/auth';
+import * as firebase from 'firebase';
+import { UploaderService } from '../services/uploader.service';
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+import { FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'upload-task',
@@ -12,14 +18,19 @@ import { finalize, tap } from 'rxjs/operators';
 export class UploadTaskComponent implements OnInit {
 
   @Input() file: File;
+  @Input() exampleForm: FormGroup;
+  @Output() fileEvent: EventEmitter<any> = new EventEmitter();
 
   task: AngularFireUploadTask;
 
   percentage: Observable<number>;
   snapshot: Observable<any>;
   downloadURL;
+  // Title and Description fields
+  title;
+  descritpion; 
 
-  constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
+  constructor(private storage: AngularFireStorage, private db: AngularFirestore, public UploaderService: UploaderService) { }
 
   ngOnInit() {
     this.startUpload();
@@ -33,6 +44,11 @@ export class UploadTaskComponent implements OnInit {
     // Reference to storage bucket
     const ref = this.storage.ref(path);
 
+    // Grabs the current user
+    const user = firebase.auth().currentUser.uid;
+    if (firebase.auth().currentUser !== null) 
+        console.log("user id: " + firebase.auth().currentUser.uid);
+
     // The main task
     this.task = this.storage.upload(path, this.file);
 
@@ -44,12 +60,14 @@ export class UploadTaskComponent implements OnInit {
       // The file's download URL
       finalize( async() =>  {
         this.downloadURL = await ref.getDownloadURL().toPromise();
-
-        this.db.collection('files').add( { downloadURL: this.downloadURL, path });
-
-        // this.db.collection('files').add( { title: this.title });
+        console.log(this.downloadURL);
+        this.fileEvent.emit({ downloadURL: this.downloadURL, path, User: user
+        })
+        // this.db.collection('files').add( { downloadURL: this.downloadURL, path, User: user
+        //   });
       }),
     );
+    console.log('startUpload happend');
   }
 
   isActive(snapshot) {
