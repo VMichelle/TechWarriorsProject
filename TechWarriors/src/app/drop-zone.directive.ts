@@ -7,14 +7,15 @@ export class DropZoneDirective {
 
   @Output() dropped =  new EventEmitter<FileList>();
   @Output() hovered =  new EventEmitter<boolean>();
-  @Output() click = new EventEmitter<boolean>();
-
+  // @Output() click = new EventEmitter<FileList>();
+  // @Output() submitted = new EventEmitter<boolean>();
+ 
   constructor() { }
 
   @HostListener('drop', ['$event'])
   onDrop($event) {
     $event.preventDefault();
-    // this.dropped.emit($event.dataTransfer.files);
+    this.dropped.emit($event.dataTransfer.files);
     this.hovered.emit(false);
   }
 
@@ -30,11 +31,11 @@ export class DropZoneDirective {
     this.hovered.emit(false);
   }
 
-  @HostListener('click', ['$event'])
-  onClick($event) {
-    $event.preventDefault();
-    this.dropped.emit($event.dataTransfer.files);
-    this.click.emit(true);
-  }
+  // @HostListener('click', ['$event'])
+  // onclick($event) {
+  //   $event.preventDefault();
+  //   this.click.emit($event.dataTransfer.files);
+  //   // this.submitted.emit(true);
+  // }
 
 }
