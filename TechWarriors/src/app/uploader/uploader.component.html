@@ -1,12 +1,15 @@
 <!-- This is the component that is visiable to the user -->
 <main>
-    <form id="my-awesome-dropzone">
-        <div class="dropzone-previews"></div> 
-        <!-- this is were the previews should be shown. -->
-      
-        <!-- Now setup your input fields -->
-        <input placeholder="Title" type="title" title="title" id="title" />
-        <input placeholder="Description" type="description" name="description" id="description" />
+      <form class="create-form" [formGroup]="exampleForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="title" formControlName="title" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <input type="description" formControlName="description" class="form-control">
+        </div>
+
 <div class="dropzone" 
      dropzone
      (hovered)="toggleHover($event)"
@@ -18,7 +21,7 @@
      <div class="file">
         <label class="file-label">
 
-        <input class="file-input" type="file" (change)="onClick($event.target.files)">
+        <input class="file-input" type="file" (change)="onDrop($event.target.files)">
 
           <span class="file-cta">
             <span class="file-icon">
@@ -34,7 +37,7 @@
 
 <h3>Uploads</h3>
 <div *ngFor="let file of files">
-  <upload-task [file]="file"></upload-task>
+  <upload-task [file]="file" (fileEvent)="addFile($event)" ></upload-task>
 </div>
 
   <button type="submit">Submit data and files!</button>
