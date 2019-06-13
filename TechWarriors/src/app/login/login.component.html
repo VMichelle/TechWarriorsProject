@@ -1,4 +1,4 @@
-<h1 class="header">Login</h1>
+<h1 class="header p-3 mb-5">Login</h1>
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -12,12 +12,12 @@
           <input type="password" class="form-control" formControlName="password">
           <label *ngIf="registerForm.error" class="error">{{errorMessage}}</label>
         </div>
-        <button type="submit" (click)="tryLogin(loginForm.value)">Login</button>
+        <button class="btn btn-outline-primary" type="submit" (click)="tryLogin(loginForm.value)">Login</button>
       </form>
     </div>
   </div>
   <div class="row">
-    <div>
+    <div class="mt-3 mb-5">
       <p>No account yet? <a href="/registration">Create an account</a></p>
     </div>
   </div>

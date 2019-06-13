@@ -1,4 +1,4 @@
-<h1 class="header">Registration</h1>
+<h1 class="header p-3 mb-5">Registration</h1>
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -17,7 +17,7 @@
           registerForm.get('password').touched || registerForm.get('password').dirty}">
           <label *ngIf="registerForm.error" class="error">{{errorMessage}}</label>
         </div>
-        <button *ngIf="registerForm.valid"  type="submit" (click)="tryRegister(registerForm.value).valid"><a id="delay" [bcRouterLink]="['/login']" [navigationDelay]="3000">Register</a></button>
+        <button class="btn btn-outline-primary" *ngIf="registerForm.valid"  type="submit" (click)="tryRegister(registerForm.value).valid"><a id="delay" [bcRouterLink]="['/login']" [navigationDelay]="3000">Register</a></button>
       </form>
       <div *ngIf="successMessage">
         Submitted Successfully.
@@ -25,6 +25,7 @@
     </div>
   </div>
 </div>
+<div class="bottomSpace"></div>
 <!-- <div>
   <div>
     <form [formGroup]="this.regService.form" (ngSubmit)="onSubmit()">
