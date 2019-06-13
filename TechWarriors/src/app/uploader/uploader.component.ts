@@ -70,6 +70,7 @@ export class UploaderComponent {
 
   onSubmit(){
     this.UploaderService.createFile(this.exampleForm.value, this.fileInfo);
+    this.resetFields();
     console.log('onSubmit happend');
   }
 }
