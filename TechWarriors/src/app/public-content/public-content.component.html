@@ -20,9 +20,10 @@
         <small>{{item.payload.doc.data().description}}</small>
       </div>
       <div class="col col-md-2 actions-col">
-        <button mat-icon-button (click)="viewDetails(item)" type="button">
+        <button id="{{item.payload.newIndex}}" mat-icon-button (click)="viewDetails(item)" type="button">
           <mat-icon>keyboard_arrow_right</mat-icon>
         </button>
+        <a [routerLink]="['/details', id]">test routing link</a>
 
       </div>
     </div>

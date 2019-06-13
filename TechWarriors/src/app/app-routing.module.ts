@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'content', component: PublicContentComponent},
   { path: '**', redirectTo: '/homepage', pathMatch: 'full' },
   { path: 'user', component: PublicContentComponent},
-  { path: 'details', component: ViewContentComponent  }, //resolve:{data : ViewContentResolver}
+  { path: 'details/:id', component: ViewContentComponent  }, //resolve:{data : ViewContentResolver}
 ];
 
 @NgModule({
