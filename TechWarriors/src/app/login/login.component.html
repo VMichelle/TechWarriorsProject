@@ -9,6 +9,7 @@
         <div class="form-group">
           <label>Password</label>
           <input type="password" class="form-control" formControlName="password">
+          <!-- Corrected loginForm error -->
           <label *ngIf="loginForm.error" class="error">{{errorMessage}}</label>
         </div>
         <button type="submit" (click)="tryLogin(loginForm.value)">Login</button>
