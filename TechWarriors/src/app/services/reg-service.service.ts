@@ -8,9 +8,9 @@ import * as firebase from 'firebase/app';
 @Injectable({
   providedIn: 'root'
 })
-
-@Injectable()
 export class RegServiceService {
+
+
 
   constructor(
    public afAuth: AngularFireAuth
