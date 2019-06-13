@@ -25,8 +25,23 @@ export class ViewContentComponent implements OnInit {
         this.item.id = data.payload.id;
       }
     })
+
+    this.loadData();
+
+    
+    }
+
+    loadData(){
+      this.firebaseService.sendOneFile().subscribe(res =>{
+        this.item = res;
+        console.log(res);
+      })
+    }
+
+
   }
 
 
 
-}
+
+

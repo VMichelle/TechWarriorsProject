@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, Params, ActivatedRoute, ParamMap } from '@angular/router';
 import { FirebaseService } from '../services/firebase.service';
 import { switchMap } from 'rxjs/operators';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 
 @Component({
@@ -20,17 +21,18 @@ export class PublicContentComponent implements OnInit {
   constructor(
     public firebaseService: FirebaseService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public db: AngularFirestore
   ) { }
 
   ngOnInit() {
     this.getData();
     
-    // this.route.paramMap.subscribe(params => {
-    //    this.firebaseService.getFile(params.get('id')).subscribe(res =>{
-    //       console.log(res);
-    //       })   
-    //   });
+    this.route.paramMap.subscribe(params => {
+       this.firebaseService.getFile(params.get('id')).subscribe(res =>{
+          console.log(res);
+          })   
+      });
     
    
   }
@@ -43,12 +45,28 @@ export class PublicContentComponent implements OnInit {
     })
   }
 
-  viewDetails(item){
-    // console.log('was clicked')
-    // console.log(item.payload.doc.id)
-    // this.contentId = item;
-    // console.log(this.contentId);
+
+  viewDetails(item: any){
+    console.log('was clicked')
+    console.log(item.payload.doc.id)
+    let itemId = item.payload.doc.id
+    console.log(itemId);
+    this.firebaseService.getOneFile(itemId);
     window.open(item.payload.doc.data().downloadURL, '_blank');
   }
+
+  // viewDetails(item){
+  //   // console.log('was clicked')
+  //   // console.log(item.payload.doc.id)
+  //   // this.contentId = item;
+  //   // console.log(this.contentId);
+  //   window.open(item.payload.doc.data().downloadURL, '_blank');
+  // }
+
+
+
+
+
+
 
 }
