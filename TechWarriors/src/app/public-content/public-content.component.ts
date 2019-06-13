@@ -1,28 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MockResourceLoader } from '@angular/compiler/testing';
-import { Router } from '@angular/router';
+import { Router, Params, ActivatedRoute, ParamMap } from '@angular/router';
 import { FirebaseService } from '../services/firebase.service';
+import { switchMap } from 'rxjs/operators';
+import { AngularFirestore } from '@angular/fire/firestore';
 
-// export interface Content {
-//   title: string;
-//   description: string;
-//   url: string;
-//   image: string;
-//   type: string;
-// }
-
-// const ELEMENT_DATA: Content[] = [
-//   {title: 'Michele at Work',
-//    description: 'Michele works on her group Music Application project.',
-//   url: 'read more...',
-//   image: '',
-//   type: 'Image'},
-//   {title: 'Terchele at Work',
-//   description: 'Michele has a twin sister who wore the same outfit on the same day.',
-//   url: 'read more...',
-//   image: '',
-//   type: 'Google Doc'},
-// ];
 
 @Component({
   selector: 'app-public-content',
@@ -32,29 +13,60 @@ import { FirebaseService } from '../services/firebase.service';
 export class PublicContentComponent implements OnInit {
 
   items: Array<any>;
-  //  firstName = 'Mary';
-  // displayedColumns: string[] = ['image', 'title', 'type', 'description', 'url' ];
-  // dataSource = ELEMENT_DATA;
-  // panelOpenState = false;
+
+  id: string;
+
+  contentId: any;
+
   constructor(
     public firebaseService: FirebaseService,
     private router: Router,
+    private route: ActivatedRoute,
+    public db: AngularFirestore
   ) { }
 
   ngOnInit() {
     this.getData();
+    
+    this.route.paramMap.subscribe(params => {
+       this.firebaseService.getFile(params.get('id')).subscribe(res =>{
+          console.log(res);
+          })   
+      });
+    
+   
   }
 
   getData(){
     this.firebaseService.getFiles()
     .subscribe(result => {
       this.items = result;
+      console.log(this.items)
     })
   }
 
-//view single content
-  viewDetails(item){
-    this.router.navigate(['/details/'+ item.payload.doc.id]);
+
+  viewDetails(item: any){
+    console.log('was clicked')
+    console.log(item.payload.doc.id)
+    let itemId = item.payload.doc.id
+    console.log(itemId);
+    this.firebaseService.getOneFile(itemId);
+    window.open(item.payload.doc.data().downloadURL, '_blank');
   }
+
+  // viewDetails(item){
+  //   // console.log('was clicked')
+  //   // console.log(item.payload.doc.id)
+  //   // this.contentId = item;
+  //   // console.log(this.contentId);
+  //   window.open(item.payload.doc.data().downloadURL, '_blank');
+  // }
+
+
+
+
+
+
 
 }
