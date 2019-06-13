@@ -52,7 +52,7 @@ export class PublicContentComponent implements OnInit {
     let itemId = item.payload.doc.id
     console.log(itemId);
     this.firebaseService.getOneFile(itemId);
-    window.open(item.payload.doc.data().downloadURL, '_blank');
+    // window.open(item.payload.doc.data().downloadURL, '_blank');
   }
 
   // viewDetails(item){
