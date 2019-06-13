@@ -1,5 +1,7 @@
-<h1>Registration</h1>
-
+<h1 class="header">Registration</h1>
+<div class="container">
+  <div class="row">
+    <div class="formContainer">
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <input type="hidden" formControlName="admin">
   <div class="form-group">
@@ -28,15 +30,16 @@
   </div>
   <button *ngIf="registerForm.valid" type="submit" (click)="tryRegister(registerForm.value)"><a id="delay"
       [bcRouterLink]="['/login']" [navigationDelay]="3000">Register</a></button>
+  <p *ngIf="!registerForm.valid">Register</p>
 </form>
 
 
 <div *ngIf="successMessage">
   Submitted Successfully.
 </div>
-
-<div></div>
-
+</div>
+</div>
+</div>
 <!-- <div>
   <div>
     <form [formGroup]="this.regService.form" (ngSubmit)="onSubmit()">

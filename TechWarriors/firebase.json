@@ -7,7 +7,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "public",
+    "public": "dist/TechWarriors",
     "ignore": [
       "firebase.json",
       "**/.*",

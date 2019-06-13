@@ -20,6 +20,13 @@ a{
 
 @media screen and (max-width: 800px) {
     .links {
-      display: none;
+        display: none;
+    }
+    img {
+        display: none;
+    }
+    .footerSection {
+        margin: 0px;
+        padding: 0px;
     }
   }
