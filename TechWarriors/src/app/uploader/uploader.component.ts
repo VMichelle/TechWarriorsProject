@@ -29,10 +29,10 @@ export class UploaderComponent {
   // };
 
   constructor(private fb: FormBuilder, public UploaderService: UploaderService) { 
-    const form = new FormGroup({
-    title: new FormControl(),
-    description: new FormControl()
-  }); }
+    const form = new FormGroup({ 
+      title: new FormControl(), 
+      description: new FormControl() }); 
+    }
 
     ngOnInit() {
       this.createForm();
@@ -47,6 +47,13 @@ export class UploaderComponent {
 
   toggleHover(event: boolean) {
     this.isHovering = event;
+  }
+
+  resetFields(){
+    this.exampleForm = this.fb.group({
+      title: new FormControl(''),
+      description: new FormControl('')
+    });
   }
   
   onDrop(files: FileList
