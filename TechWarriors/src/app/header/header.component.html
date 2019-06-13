@@ -5,9 +5,11 @@
         <img class="headerLogo" src="https://code.midlandu.edu/wp-content/uploads/2017/06/White.png" alt="">
         <h1 class="nameTitle text-uppercase">Tech Warriors</h1>
         <a class="navLink ml-4" [routerLink]="[ '/homepage/path?refresh=1' ]" routerLinkActive="active" (click)="reload()">Home</a>            
-        <a class="navLink" [routerLink]="[ '/login' ]" routerLinkActive="active">Login</a>
-        <a class="navLink" [routerLink]="[ '/registration' ]" routerLinkActive="active">Register</a>
+        
         <a class="navLink" [routerLink]="[ '/content' ]" routerLinkActive="active">Content</a>
         <a *ngIf="userId !== null" class="navLink" [routerLink]="[ '/uploader' ]" routerLinkActive="active">Upload</a>
+
+        <a class="navLink ml-5" [routerLink]="[ '/login' ]" routerLinkActive="active">Login/Register</a>
+        <!-- <a class="navLink" [routerLink]="[ '/registration' ]" routerLinkActive="active">Register</a> -->
         </div>
 </div>
