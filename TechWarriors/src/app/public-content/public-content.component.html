@@ -11,16 +11,9 @@
 <div class="list-group files-list">
   <div *ngFor="let item of items" class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="row">
-<<<<<<< HEAD
-      <!-- <div class="col col-md-2 image-col">
-        <img class="image" [src]="item.payload.doc.data().downloadURL">
-        <img src="https://firebasestorage.googleapis.com/v0/b/techwarriors-1c02e.appspot.com/o/files%2F1560185742416_wet%20Pups.jpeg?alt=media&token=10330f2f-1a6d-4e74-b4c7-36eae305529c">
-      </div> -->
-=======
       <div class="col col-md-2 image-col">
         <img class="image" *ngIf="downloadURL" src="item.payload.doc.data().files[0].downloadURL">
       </div>
->>>>>>> master
       <div class="col col-md-8 text-col">
         <h5 class="mb-1">{{item.payload.doc.data().title}}</h5>
         <small>{{item.payload.doc.data().description}}</small>
