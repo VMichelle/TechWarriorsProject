@@ -2,6 +2,7 @@
 <!-- test accordion -->
 
 
+<!-- <a class="navLink" [routerLink]="[ '/details' ]" routerLinkActive="active">more</a> -->
 
 <div class="darkBlue welcomeContainer">
 <h1 class="mat-h1 welcome">Welcome, Tech Warrior {{firstName}}!</h1></div>
@@ -19,9 +20,13 @@
         <small>{{item.payload.doc.data().description}}</small>
       </div>
       <div class="col col-md-2 actions-col">
-        <button mat-icon-button (click)="viewDetails(item)" type="button">
-          <mat-icon>keyboard_arrow_right</mat-icon>
-        </button>
+        
+        <a [routerLink]="['/details', item.payload.doc.id]">
+          <button mat-icon-button id="{{item.payload.newIndex}}" (click)="viewDetails(item)" type="button">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </button>
+        </a>
+
       </div>
     </div>
   </div>

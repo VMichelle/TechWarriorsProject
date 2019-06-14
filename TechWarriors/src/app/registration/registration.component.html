@@ -1,4 +1,4 @@
-<h1 class="header">Registration</h1>
+<h1 class="header p-3 mb-5">Registration</h1>
 <div class="container">
   <div class="row">
     <div class="formContainer">
@@ -30,7 +30,6 @@
   </div>
   <button *ngIf="registerForm.valid" type="submit" (click)="tryRegister(registerForm.value)"><a id="delay"
       [bcRouterLink]="['/login']" [navigationDelay]="3000">Register</a></button>
-  <p *ngIf="!registerForm.valid">Register</p>
 </form>
 
 
@@ -40,6 +39,7 @@
 </div>
 </div>
 </div>
+<div class="bottomSpace"></div>
 <!-- <div>
   <div>
     <form [formGroup]="this.regService.form" (ngSubmit)="onSubmit()">
