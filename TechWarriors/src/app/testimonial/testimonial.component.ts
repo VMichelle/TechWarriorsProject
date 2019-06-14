@@ -87,6 +87,7 @@ constructor(
   }
 onSubmit (){
   this.TestimonalService.createTestimonial(this.testimonialForm.value); 
+  this.route.navigate(['/homepage']);
   console.log(this.value);
 }
 testimonialSubmit() {
