@@ -18,8 +18,8 @@ export class UploaderService {
       title: value.title,
       description: value.description,
       files: files
-    });
+    })
   }
 
-  
+ 
 }

@@ -1,12 +1,10 @@
-import { Component, OnInit, Input, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { finalize, tap } from 'rxjs/operators';
-import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase';
 import { UploaderService } from '../services/uploader.service';
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { FormGroup } from '@angular/forms';
 
 
