@@ -26,12 +26,7 @@
       Password must be at least 6 characters.
     </div>
   </div>
-  <button *ngIf="registerForm.valid" type="submit" (click)="tryRegister(registerForm.value)">Register</button>
-  <p *ngIf="!registerForm.valid">Register</p>
-  <button *ngIf="registerForm.valid" type="submit" (click)="tryRegister(registerForm.value)"><a id="delay"
-      [bcRouterLink]="['/login']" [navigationDelay]="3000">Register</a></button>
-  <button type="submit" [class.disabled]="registerForm.invalid" [disabled]="registerForm.invalid">Register</button>
-
+<button type="submit" [class.disabled]="registerForm.invalid" [disabled]="registerForm.invalid">Register</button>
 </form>
 
 
