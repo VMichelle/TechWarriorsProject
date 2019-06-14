@@ -1,4 +1,4 @@
-<h1 class="header">Registration</h1>
+<h1 class="header p-3 mb-5">Registration</h1>
 <div class="container">
   <div class="row">
     <div class="formContainer">
@@ -28,8 +28,13 @@
       Password must be at least 6 characters.
     </div>
   </div>
+<<<<<<< HEAD
   <button *ngIf="registerForm.valid" type="submit" (click)="tryRegister(registerForm.value)">Register</button>
   <p *ngIf="!registerForm.valid">Register</p>
+=======
+  <button *ngIf="registerForm.valid" type="submit" (click)="tryRegister(registerForm.value)"><a id="delay"
+      [bcRouterLink]="['/login']" [navigationDelay]="3000">Register</a></button>
+>>>>>>> 51fd38e8df2d45a761a3f25a91718032db816754
 </form>
 
 
@@ -39,6 +44,7 @@
 </div>
 </div>
 </div>
+<div class="bottomSpace"></div>
 <!-- <div>
   <div>
     <form [formGroup]="this.regService.form" (ngSubmit)="onSubmit()">
