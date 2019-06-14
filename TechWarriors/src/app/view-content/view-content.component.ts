@@ -32,19 +32,20 @@ export class ViewContentComponent implements OnInit {
     public firebaseService: FirebaseService,
     private route: ActivatedRoute,
     private db: AngularFirestore,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private actr: ActivatedRoute
   ) { }
 
   ngOnInit() {
 
-    this.route.data.subscribe(routeData => {
-      let data = routeData['data'];
-      if (data) {
-        this.items = data.payload.data();
-        this.items.id = data.payload.id;
-      }
-    });
-
+    // this.route.data.subscribe(routeData => {
+    //   let data = routeData['data'];
+    //   if (data) {
+    //     this.items = data.payload.data();
+    //     this.items.id = data.payload.id;
+    //   }
+    // });
+    this.firebaseService.getOneFile(this.actr.snapshot.params.id)
     this.loadData();
     this.loadUserComments();
 
