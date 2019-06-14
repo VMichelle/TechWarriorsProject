@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { UserComment } from './user-comment';
 
 @Injectable({
   providedIn: 'root'
@@ -33,14 +34,14 @@ export class FirebaseService {
     return this.db.collection("files").doc(this.itemId).collection('comments').get();
   }
 
-  // storeUserComment() {
-  //     return this.db.collection('comments').add({
-  //       docRef: 'docRefExample',
-  //       userComment: 'I love to comment. this is my comment about this file over here',
-  //       userName: 'Bob Michael'
-  //     });
-  //   }
-
-
+  createUserComment(comment: UserComment) {
+    console.log(comment)
+    this.db.collection('files').doc(this.itemId).collection('comments').add(comment);
   }
+
+
+
+
+
+}
 
