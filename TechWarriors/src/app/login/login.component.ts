@@ -36,6 +36,7 @@ export class LoginComponent {
     }, err => {
       console.log(err);
       this.errorMessage = err.message;
+      this.router.navigate(['/login']);
     })
   }
 
@@ -50,3 +51,4 @@ export class LoginComponent {
 
 
 }
+

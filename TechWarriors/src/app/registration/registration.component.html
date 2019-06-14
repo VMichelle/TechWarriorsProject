@@ -1,5 +1,6 @@
-<h1>Registration</h1>
-
+<h1 class="header p-3 mb-5">Registration</h1>
+<div class="container">
+<div class="row">
 <form [formGroup]="registerForm" (ngSubmit)="tryRegister()">
   <div class="form-group">
     <label>First Name</label>
@@ -37,3 +38,6 @@
 <div *ngIf="successMessage">
   Submitted Successfully.
 </div>
+</div>
+</div>
+
