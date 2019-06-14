@@ -50,8 +50,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+// import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+// import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -111,8 +111,8 @@ import { ViewContentComponent } from './view-content/view-content.component';
     MatButtonToggleModule,
     MatChipsModule,
     MatIconModule,
-    MatProgressSpinnerModule,
-    MatProgressBarModule,
+    // MatProgressSpinnerModule,
+    // MatProgressBarModule,
     MatDialogModule,
     MatTooltipModule,
     MatSnackBarModule,
