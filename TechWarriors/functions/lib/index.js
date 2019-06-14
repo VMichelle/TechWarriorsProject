@@ -9,11 +9,18 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
 exports.heyThere = functions.https.onRequest((request, response) => {
     response.send("Hello from Michelle!");
 });
-// export getToken = functions.admin.auth().createCustomToken(uid)
-//     .then(function(customToken: any) {
-//     return customToken;
-//     })
-//     .catch(function(error) {
-//     console.log('Error creating custom token:', error);
-// });
-//# sourceMappingURL=index.js.map
+
+exports.createFile = functions.firestore
+    .document('files/{userId}')
+    .onCreate((snap, context) => {
+        let data = {
+            userComment: 'First comment here!',
+            userName: 'Michelle Vu',
+            timeStamp: Date
+        };
+
+        const newValue = snap.data();
+        const userId = snap.id();
+
+        let setDoc = db.collection('comments').doc(userId).set(data);
+    });

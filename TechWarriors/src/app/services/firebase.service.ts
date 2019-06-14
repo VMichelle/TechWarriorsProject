@@ -6,36 +6,38 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class FirebaseService {
 
-  
+  constructor(public db: AngularFirestore) { }
 
-  constructor(public db: AngularFirestore) {}
-
-
-  getFile(userKey){
+  getFile(userKey) {
     return this.db.collection('files').doc(userKey).snapshotChanges();
   }
 
-
-  getFiles(){
+  getFiles() {
     return this.db.collection('files').snapshotChanges();
   }
 
-  
-
-  oneFile: any;
   itemId: any;
 
-  //'Fdlh83uPnTJ65ImzOK5N';
-
-  getOneFile(oneId: any){
+  getOneFile(oneId: any) {
     this.itemId = oneId;
-    console.log(oneId);
-    console.log(this.itemId)
-    }
-  
-  sendOneFile(){
+  }
+
+  sendOneFile() {
     return this.db.collection("files").doc(this.itemId).get();
   }
 
+  getUserComments() {
+    return this.db.collection("files").doc(this.itemId).collection('comments').get();
+  }
 
-}
+  // storeUserComment() {
+  //     return this.db.collection('comments').add({
+  //       docRef: 'docRefExample',
+  //       userComment: 'I love to comment. this is my comment about this file over here',
+  //       userName: 'Bob Michael'
+  //     });
+  //   }
+
+
+  }
+
