@@ -1,20 +1,13 @@
-<div>
-    <h2>Testimonials</h2>
-    <div>
-        <p>Great School</p>
-        <p>A. Previous Student</p>
-        <span *ngFor="let starred of stars; let i = index"
-            (click)="rate(i + (starred ? (value > i + 1 ? 1 : 0) : 1))">
-            <ng-container *ngIf="starred; else noStar">⭐</ng-container>
-            <ng-template #noStar>⚪</ng-template>
-        </span>
-        <p>
-            This 8 week immersive course is catered to beginners with no previous design or technical experience.
-            Students will be taught the fundamentals of User Centered Design and learn to validate ideas through
-            user research, rapid prototyping & heuristic evaluation. The course will end with a capstone project
-            where students will take a new product idea from validation to launch. By the end of the course,
-            students will be ready to start a new career as a UX Designer, Freelance or turbo charge their current
-            professional trajectory.
-        </p>
+<h2 class="header test">Testimonials</h2>
+
+<div class="list-group files-list">
+    <div *ngFor="let item of items" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="row">
+            <div class="col col-md-8 text-col">
+                <h3 class="mb-1">{{item.payload.doc.data().testimonialName}}</h3>
+                <h5 class="mb-1">{{item.payload.doc.data().userName}}</h5>
+                <p class="mb-1">{{item.payload.doc.data().textfield}}</p>
+            </div>
+        </div>
     </div>
 </div>

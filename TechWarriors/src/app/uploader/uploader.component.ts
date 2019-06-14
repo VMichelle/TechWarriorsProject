@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 // import { Title } from '@angular/platform-browser';
 import {  UploaderService } from '../services/uploader.service'
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -28,7 +29,7 @@ export class UploaderComponent {
   //   ]
   // };
 
-  constructor(private fb: FormBuilder, public UploaderService: UploaderService) { 
+  constructor(private fb: FormBuilder, private router: Router, public UploaderService: UploaderService) { 
     const form = new FormGroup({ 
       title: new FormControl(), 
       description: new FormControl() }); 
@@ -69,7 +70,14 @@ export class UploaderComponent {
   }
 
   onSubmit(){
-    this.UploaderService.createFile(this.exampleForm.value, this.fileInfo);
+    this.UploaderService.createFile(this.exampleForm.value, this.fileInfo)
+    .then(
+      res => {
+        console.log(res);
+        this.resetFields();
+        this.router.navigate(['/content']);
     console.log('onSubmit happend');
+      }).catch(err=> console.log(err)).finally(() => console.log('done'))
+    
   }
 }

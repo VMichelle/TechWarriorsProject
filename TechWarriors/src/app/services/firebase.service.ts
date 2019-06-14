@@ -17,6 +17,9 @@ export class FirebaseService {
     return this.db.collection('files').snapshotChanges();
   }
 
+  getTestimonials() {
+    return this.db.collection('testimonials').snapshotChanges();
+  }
   itemId: any;
 
   getOneFile(oneId: any) {

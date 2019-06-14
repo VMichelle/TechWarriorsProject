@@ -11,7 +11,7 @@ import { UploaderComponent } from './uploader/uploader.component';
 // import { ViewContentResolver } from './view-content/view-content.resolver';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/homepage', pathMatch: 'full'},
+  // { path: '', redirectTo: '/homepage', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'homepage', component: HomepageComponent },
   { path: 'uploader',  component: UploaderComponent },
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'content', component: PublicContentComponent},
   // { path: '**', redirectTo: '/homepage' },
   { path: 'user', component: PublicContentComponent},
-  { path: 'details/:id', component: ViewContentComponent  }, //resolve:{data : ViewContentResolver}
+  { path: 'details/:id', component: ViewContentComponent  },
 ];
 
 @NgModule({

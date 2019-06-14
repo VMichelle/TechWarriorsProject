@@ -1,5 +1,6 @@
-<h1>Registration</h1>
-
+<h1 class="header p-3 mb-5">Registration</h1>
+<div class="container">
+<div class="row">
 <form [formGroup]="registerForm" (ngSubmit)="tryRegister()">
   <div class="form-group">
     <label>First Name</label>
@@ -25,10 +26,13 @@
       Password must be at least 6 characters.
     </div>
   </div>
-  <button type="submit" [class.disabled]="registerForm.invalid" [disabled]="registerForm.invalid">Register</button>
+<button type="submit" [class.disabled]="registerForm.invalid" [disabled]="registerForm.invalid">Register</button>
 </form>
 
 
 <div *ngIf="successMessage">
   Submitted Successfully.
 </div>
+</div>
+</div>
+
