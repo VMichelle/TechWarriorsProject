@@ -27,13 +27,10 @@
   </div>
   <button *ngIf="registerForm.valid" type="submit" (click)="tryRegister(registerForm.value)">Register</button>
   <p *ngIf="!registerForm.valid">Register</p>
-=======
   <button *ngIf="registerForm.valid" type="submit" (click)="tryRegister(registerForm.value)"><a id="delay"
       [bcRouterLink]="['/login']" [navigationDelay]="3000">Register</a></button>
->>>>>>> 51fd38e8df2d45a761a3f25a91718032db816754
-=======
   <button type="submit" [class.disabled]="registerForm.invalid" [disabled]="registerForm.invalid">Register</button>
->>>>>>> 3560f8bec09e7b191a32abded8cadf32c67b62cb
+
 </form>
 
 
