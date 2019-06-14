@@ -36,7 +36,7 @@ export class TestimonialServiceService {
       userName: value.userName, 
       // totalStars: value.totalStars,
       testimonialName: value.testimonialName, 
-      textfield: value.textfield,
+      textfield: value.textfield, 
       uid: user
     });
   }
