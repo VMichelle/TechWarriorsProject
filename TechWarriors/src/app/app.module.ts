@@ -59,6 +59,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ViewContentComponent } from './view-content/view-content.component';
+import { TestimonialServiceService } from './services/testimonial.service';
 
 @NgModule({
   declarations: [
@@ -128,7 +129,7 @@ import { ViewContentComponent } from './view-content/view-content.component';
     ReactiveFormsModule,
     AngularFireStorageModule
   ],
-  providers: [RegServiceService],
+  providers: [RegServiceService, TestimonialServiceService],
   bootstrap: [AppComponent],
   
 
