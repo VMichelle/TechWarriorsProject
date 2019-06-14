@@ -1,74 +1,34 @@
-<h1 class="header">Registration</h1>
-<div class="container">
-  <div class="row">
-    <div class="formContainer">
-      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label>Email address</label>
-          <input type="email" formControlName="email" class="form-control" [ngClass]="{'has-error' : registerForm.get('email').errors  && 
-          registerForm.get('email').touched || registerForm.get('email').dirty}">
-        </div>
-        <div *ngIf="registerForm.get('email').errors">
-          Not a Midland University student? <br><a href="homepage#slateTitle">Click here to request information!</a>
-        </div>
-        <div class="form-group">
-          <label>Password</label>
-          <input type="password" class="form-control" formControlName="password" [ngClass]="{'has-error' : registerForm.get('password').errors  && 
-          registerForm.get('password').touched || registerForm.get('password').dirty}">
-          <label *ngIf="registerForm.error" class="error">{{errorMessage}}</label>
-        </div>
-        <button *ngIf="registerForm.valid"  type="submit" (click)="tryRegister(registerForm.value).valid"><a id="delay" [bcRouterLink]="['/login']" [navigationDelay]="3000">Register</a></button>
-        <p *ngIf="!registerForm.valid">Register</p>
-      </form>
-      <div *ngIf="successMessage">
-        Submitted Successfully.
-      </div>
+<h1>Registration</h1>
+
+<form [formGroup]="registerForm" (ngSubmit)="tryRegister()">
+  <div class="form-group">
+    <label>First Name</label>
+    <input type="text" formControlName="firstName" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <input type="text" formControlName="lastName" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Email address</label>
+    <input type="email" formControlName="email" class="form-control" [(ngModel)]="email" [ngClass]="{'has-error' : registerForm.get('email').errors  && 
+    registerForm.get('email').touched || registerForm.get('email').dirty}">
+  </div>
+  <div *ngIf="registerForm.get('email').errors">
+    Not a Midland University student? <br><a href="homepage#slateTitle">Click here to request information!</a>
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input required minlength="6" type="password" class="form-control" formControlName="password" [(ngModel)]="password" [ngClass]="{'has-error' : registerForm.get('password').errors  && 
+    registerForm.get('password').touched || registerForm.get('password').dirty}">
+    <div *ngIf="registerForm.get('password').errors">
+      Password must be at least 6 characters.
     </div>
   </div>
-</div>
-<!-- <div>
-  <div>
-    <form [formGroup]="this.regService.form" (ngSubmit)="onSubmit()">
-      <input type="hidden" formControlName="$key">
-      <div class="form-group">
-        <label>First Name</label>
-        <input formControlName="firstName" class="form-control" [ngClass]="{'is-invalid' :submitted && formControls.firstName.errors}" [(ngModel)]="userResponse.firstName">
-        <div class="invalid-feedback" *ngIf="submitted && formControls.firstName.errors">
-          This field is required!
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Last Name</label>
-        <input formControlName="lastName" class="form-control" [ngClass]="{'is-invalid' :submitted && formControls.lastName.errors}" [(ngModel)]="userResponse.lastName">
-        <div class="invalid-feedback" *ngIf="submitted && formControls.lastName.errors">
-            This field is required!
-          </div>
-      </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input formControlName="email" class="form-control" type="email" [ngClass]="{'is-invalid' :submitted && formControls.email.errors}" [(ngModel)]="userResponse.email">
-        <div class="invalid-feedback" *ngIf="submitted && formControls.email.errors">
-            You must enter a valid email address.
-          </div>
-      </div>
-      <div class="form-group">
-        <label>Password</label>
-        <input formControlName="password" class="form-control" type="password" [ngClass]="{'is-invalid' :submitted && formControls.password.errors}" [(ngModel)]="userResponse.password">
-        <div class="invalid-feedback" *ngIf="submitted && formControls.password.errors">
-            Password must be at least 6 characters in length.
-          </div>
-      </div>
-      <div class="form-group">
-        <button type="submit">Submit</button>
-      </div>
-    </form>
-    <div *ngIf="showSuccessMessage">
-      Submitted Successfully.
-    </div>
-  </div>
-</div>
+  <button type="submit" [class.disabled]="registerForm.invalid" [disabled]="registerForm.invalid">Register</button>
+</form>
 
-<div>
-  {{formControls.firstName.value}}
-</div> -->
 
+<div *ngIf="successMessage">
+  Submitted Successfully.
+</div>
