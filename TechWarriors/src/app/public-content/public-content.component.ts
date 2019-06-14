@@ -28,11 +28,11 @@ export class PublicContentComponent implements OnInit {
   ngOnInit() {
     this.getData();
     
-    this.route.paramMap.subscribe(params => {
-       this.firebaseService.getFile(params.get('id')).subscribe(res =>{
-          // console.log(res);
-          })   
-      });
+    // this.route.paramMap.subscribe(params => {
+    //    this.firebaseService.getFile(params.get('id')).subscribe(res =>{
+    //       // console.log(res);
+    //       })   
+    //   });
     
    
   }
