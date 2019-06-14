@@ -1,3 +1,23 @@
-<p>
-  view-content works!
-</p>
+<div class="container mt-3">
+    <div class="title h3 mt-4">{{items.title}}</div>
+    <a class="btn btn-outline-success btn-lg mt-2 mb-2" href="{{items.files[0].downloadURL}}" target="_blank">View
+        File</a>
+    <p class="description">{{items.description}}</p>
+</div>
+
+
+<div class="comments container center">
+    <div *ngFor="let comment of comments">
+        <div class="h4">{{comment.userId}}</div>
+        <div class="h4">{{comment.userName}}</div>
+        <div>{{comment.userComment}}</div>
+        
+    </div>
+</div>
+
+<div class="input-group mb-3 container userComment d-flex justify-content-center">
+    <div class="input-group-append w-75">
+        <textarea [(ngModel)]="newComment.userComment" class="form-control" aria-label="With textarea"></textarea>
+        <button class="btn btn-outline-primary" type="button" (click)="submitComment()">Submit</button>
+    </div>
+</div>

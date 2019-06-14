@@ -6,43 +6,38 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class FirebaseService {
 
-  constructor(public db: AngularFirestore) {}
+  constructor(public db: AngularFirestore) { }
 
-//   getAvatars(){
-//       return this.db.collection('/avatar').valueChanges()
-//   }
-
-  getUser(userKey){
-    return this.db.collection('users').doc(userKey).snapshotChanges();
+  getFile(userKey) {
+    return this.db.collection('files').doc(userKey).snapshotChanges();
   }
 
-//   updateUser(userKey, value){
-//     value.nameToSearch = value.name.toLowerCase();
-//     return this.db.collection('users').doc(userKey).set(value);
-//   }
-
-
-  getFiles(){
+  getFiles() {
     return this.db.collection('files').snapshotChanges();
   }
 
-//   searchUsers(searchValue){
-//     return this.db.collection('users',ref => ref.where('nameToSearch', '>=', searchValue)
-//       .where('nameToSearch', '<=', searchValue + '\uf8ff'))
-//       .snapshotChanges()
-//   }
+  itemId: any;
 
-//   searchUsersByAge(value){
-//     return this.db.collection('users',ref => ref.orderBy('age').startAt(value)).snapshotChanges();
-//   }
-
-
-  createFile(value){
-    return this.db.collection('files').add({
-      UID: value.UID,
-      title: value.title,
-      description: value.description,
-      downloadUrl: "",
-    });
+  getOneFile(oneId: any) {
+    this.itemId = oneId;
   }
-}
+
+  sendOneFile() {
+    return this.db.collection("files").doc(this.itemId).get();
+  }
+
+  getUserComments() {
+    return this.db.collection("files").doc(this.itemId).collection('comments').get();
+  }
+
+  // storeUserComment() {
+  //     return this.db.collection('comments').add({
+  //       docRef: 'docRefExample',
+  //       userComment: 'I love to comment. this is my comment about this file over here',
+  //       userName: 'Bob Michael'
+  //     });
+  //   }
+
+
+  }
+
