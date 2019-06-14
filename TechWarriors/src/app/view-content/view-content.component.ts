@@ -71,6 +71,9 @@ export class ViewContentComponent implements OnInit {
 
   createComment(){
     this.firebaseService.createUserComment(this.newComment);
+    this.newComment.userInput = '';
+    this.newComment.userName = '';
+    this.loadUserComments();
   }
   
 

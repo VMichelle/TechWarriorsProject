@@ -10,7 +10,7 @@
 <div class="comments container center">
     <div class="font-weight-bold">Comments</div>
     <div *ngFor="let comment of comments">
-        <div class="">{{comment.userName}}</div>
+        <div class="font-weight-bold">{{comment.userName}}</div>
         <div class="commentDisplay">{{comment.userInput}}</div>
         <hr>
     </div>
@@ -20,6 +20,9 @@
 <form class="addUserComment container center mt-3 mb-5">
     <div class="inputField">
         <input class="p-1" placeholder="Add a comment" [(ngModel)]="newComment.userInput" name="userInput">
+    </div>
+    <div class="inputField">
+        <input class="p-1 mt-1" placeholder="Your name" [(ngModel)]="newComment.userName" name="userName">
     </div>
     <button class="btn btn-outline-primary mt-3" color="primary" (click)="createComment()">Submit</button>
 </form>
