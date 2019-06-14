@@ -6,4 +6,7 @@ Tech Lead: Ben
 
 Developers: Amy, Michelle, Eric, Paul
 
-Site hosted on: techwarriors-1c02e.firebaseapp.com/
+[Site URL](techwarriors-1c02e.firebaseapp.com)
+
+Site built with: 
+HTML, CSS, JavaScript, TypeScript, Angular, and Firebase
