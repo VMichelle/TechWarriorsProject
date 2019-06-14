@@ -1,5 +1,9 @@
+
 import { Component, OnInit, forwardRef, Input, HostBinding } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { TestimonialServiceService } from '../services/testimonial.service';
+import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-testimonial',
@@ -13,13 +17,30 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 })
 export class TestimonialComponent implements ControlValueAccessor {
   stars: boolean[] = Array(5).fill(false);
-  // Allow the input to be disabled, and when it is make it somewhat transparent.
+  userName: string;
   totalStars: number;
+  testimonialName: string;
+  textfield: string = '';
+  testimonialForm: FormGroup;
+  // Allow the input to be disabled, and when it is make it somewhat transparent.
+
+constructor(
+  public TestimonalService: TestimonialServiceService, private route: Router, 
+  private fb: FormBuilder, public afs: AngularFirestore)
+  {
+  this.testimonialForm = new FormGroup({
+    userName: new FormControl('', [Validators.required]),
+    // totalStars: new FormControl('', [Validators.required]),
+    testimonialName: new FormControl('', [Validators.required]),
+    textfield: new FormControl('', [Validators.required])
+  });
+}
+
   @Input() disabled = false;
   @HostBinding('style.opacity')
-  get opacity() {
-    return this.disabled ? 0.25 : 1;
-  }
+  // get opacity() {
+  //   return this.disabled ? 0.25 : 1;
+  // }
 
   // Function to call when the rating changes.
   onChange = (rating: number) => {};
@@ -64,5 +85,11 @@ export class TestimonialComponent implements ControlValueAccessor {
   setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;
   }
-
+onSubmit (){
+  this.TestimonalService.createTestimonial(this.testimonialForm.value); 
+  console.log(this.value);
+}
+testimonialSubmit() {
+  
+}
 }
