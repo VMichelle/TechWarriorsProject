@@ -30,7 +30,7 @@ export class PublicContentComponent implements OnInit {
     
     this.route.paramMap.subscribe(params => {
        this.firebaseService.getFile(params.get('id')).subscribe(res =>{
-          console.log(res);
+          // console.log(res);
           })   
       });
     
@@ -41,16 +41,16 @@ export class PublicContentComponent implements OnInit {
     this.firebaseService.getFiles()
     .subscribe(result => {
       this.items = result;
-      console.log(this.items)
+      // console.log(this.items)
     })
   }
 
 
   viewDetails(item: any){
-    console.log('was clicked')
-    console.log(item.payload.doc.id)
+    // console.log('was clicked')
+    // console.log(item.payload.doc.id)
     let itemId = item.payload.doc.id
-    console.log(itemId);
+    // console.log(itemId);
     this.firebaseService.getOneFile(itemId);
     // window.open(item.payload.doc.data().downloadURL, '_blank');
   }

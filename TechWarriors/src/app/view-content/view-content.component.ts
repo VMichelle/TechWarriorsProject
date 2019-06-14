@@ -3,6 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { FirebaseService } from '../services/firebase.service';
 import { _document } from '@angular/platform-browser/src/browser';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { FormBuilder, FormGroup } from '@angular/forms'
+import { UserComment } from '../services/user-comment';
+import * as firebase from 'firebase';
 
 
 @Component({
@@ -12,19 +15,24 @@ import { AngularFirestore } from 'angularfire2/firestore';
 })
 export class ViewContentComponent implements OnInit {
 
+  // submitComment: FormGroup;
+  // commentInput: string;
+
   items: any;
   comments: any;
 
-  newComment: {
-    userId: string,
-    userComment: string,
-    userName: 'Guest User'
+  // uid = firebase.auth().currentUser.uid;
+
+  newComment: UserComment = {
+    userInput: '',
+    userName: ''
   }
 
   constructor(
     public firebaseService: FirebaseService,
     private route: ActivatedRoute,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private fb: FormBuilder
   ) { }
 
   ngOnInit() {
@@ -61,8 +69,8 @@ export class ViewContentComponent implements OnInit {
     })
   }
 
-  submitComment(){
-    
+  createComment(){
+    this.firebaseService.createUserComment(this.newComment);
   }
   
 
